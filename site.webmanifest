@@ -1,0 +1,12 @@
+{
+    "icons": [{
+        "src": "icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }],
+    "start_url": "/",
+    "name": "Kwestion CMS Script",
+    "short_name": "KwestionCMS",
+    "theme_color": "#025757",
+    "display": "standalone"
+}
