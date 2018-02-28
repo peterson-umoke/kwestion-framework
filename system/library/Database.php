@@ -9,7 +9,7 @@ use Medoo\Medoo;
 /**
  * Database class
  *
- * This is the main class for the query builder
+ * This is the wrapper class for the medoo query builder
  * @author Peterson Umoke <umoke10@hotmail.com>
  */
 class Database extends Medoo

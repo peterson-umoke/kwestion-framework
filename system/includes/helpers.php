@@ -12,7 +12,7 @@ if (!defined('SITE_URL')) {
 
  // built in system helpers
  $sys_helpers = array(
-    'url', 'template','database','form','session','upload','globals'
+    'url', 'template','database','form','upload','error'
  );
 
  /**

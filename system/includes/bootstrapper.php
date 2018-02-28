@@ -97,6 +97,15 @@ if (!defined('SITE_URL')) {
       require_once INCLUDES_DIR . DS . 'controller.php';
   }
 
+  /**
+  * ===========================================
+  * import the loader file which loads other files in the config directory
+  * ===========================================
+  */
+  if (file_exists(CONFIG_DIR . DS . 'loader.php')) {
+      require_once CONFIG_DIR . DS . 'loader.php';
+  }
+
  /**
   * ===========================================
   * import the router file

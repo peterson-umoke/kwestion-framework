@@ -83,7 +83,7 @@ if (isset($_SERVER['REQUEST_URI'])) {
         if (file_exists(VIEWS_DIR . DS .  $page['default_page_name'])) {
             require_once VIEWS_DIR . DS .  $page['default_page_name'];
         } else {
-            show_error("Homepage not found", "The Homepage has not been created please create " .  $page['default_page_name']. ' in the <b><i>'. VIEWS_DIR.DS.'</i></b> folder');
+            die("<h1> Error Occurred!</h1>" . $page['default_page_name'] . " doesn't exist in the ". VIEWS_DIR . DS ."  directory");
         }
     }
 }

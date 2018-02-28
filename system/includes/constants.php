@@ -207,12 +207,3 @@ if (!defined('COMPOSER_PACKAGES_DIR_NAME')) {
   if (!defined('UPLOADS_DIR_STRUCTURE')) {
       define("UPLOADS_DIR_STRUCTURE", date("Y")."/".date("M")."/".date("d")."/");
   }
-
-  /**
-  * ===========================================
-  * define the default page key
-  * ===========================================
-  */
-//   if (!defined('DEFAULT_PAGE_KEY')) {
-//       define("DEFAULT_PAGE_KEY", "pg");
-//   }

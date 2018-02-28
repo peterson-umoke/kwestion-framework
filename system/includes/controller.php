@@ -4,11 +4,12 @@ if (!defined('SITE_URL')) {
     exit('No Direct access to page');
 }
 
-/**
- * This file is responsible for handling the post actions been sent by the server
- *
- * @author Peterson Umoke
- */
+  /**
+  * ===========================================
+  * This file can be used to overides settings for the database connection
+  * @author Peterson Umoke <umoke10@hotmail.com>
+  * ===========================================
+  */
 
  //example
  if (isset($_POST['who_am_i'])) {
