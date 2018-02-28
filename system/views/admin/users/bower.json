@@ -1,17 +1,18 @@
 {
-  "name": "Khanstore",
-  "description": "",
-  "main": "index.js",
+  "name": "users",
+  "homepage": "https://github.com/peterson-umoke/kwestion-framework",
   "authors": [
     "Peterson Umoke <umoke10@hotmail.com>"
   ],
+  "description": "",
+  "main": "",
   "license": "MIT",
-  "homepage": "",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "assets/vendors",
     "test",
     "tests"
   ]

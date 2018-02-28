@@ -187,7 +187,7 @@ if (!defined('COMPOSER_PACKAGES_DIR_NAME')) {
   * ===========================================
   */
   if (!defined('ASSETS_URL')) {
-      define("ASSETS_URL", SITE_URL . DS . ASSETS_DIR_NAME);
+      define("ASSETS_URL", SITE_URL . "/" . ASSETS_DIR_NAME);
   }
 
 /**
@@ -196,7 +196,7 @@ if (!defined('COMPOSER_PACKAGES_DIR_NAME')) {
   * ===========================================
   */
   if (!defined('UPLOADS_URL')) {
-      define("UPLOADS_URL", SITE_DIR . DS . UPLOADS_DIR_NAME);
+      define("UPLOADS_URL", SITE_DIR ."/" . UPLOADS_DIR_NAME);
   }
 
   /**
