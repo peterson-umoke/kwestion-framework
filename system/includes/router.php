@@ -7,6 +7,7 @@ if (!defined('SITE_URL')) {
 // begin the path
 $page = array();
 $page['default_page_name'] = CUSTOM_WELCOME_PAGE_FILE;
+$page['general_default_page'] = VIEWS_DIR . DS .  $page['default_page_name'];
 
 if (isset($_SERVER['REQUEST_URI'])) {
 
@@ -36,12 +37,14 @@ if (isset($_SERVER['REQUEST_URI'])) {
 
 
     // remove the last key
-    if (count($page['call_parts']) > 1) {
+    if (count($page['call_parts']) > 2) {
         unset($page['call_parts'][$page['basename_key']]);
         // compile the folder name
         $page['folder_names']	= implode(DS, $page['call_parts']);
-        // compile the file name
+
+        // get the base name of the file
         $page['file_name'] = $page['basename'] . '.php';
+
 
         // get the file
         $page['fullpath']	= $page['folder_names'] . DS . $page['file_name'];
@@ -76,8 +79,8 @@ if (isset($_SERVER['REQUEST_URI'])) {
                     break;
                 }
         } else {
-            if (file_exists(VIEWS_DIR . DS .  $page['default_page_name'])) {
-                require_once VIEWS_DIR . DS .  $page['default_page_name'];
+            if (file_exists($page['general_default_page'])) {
+                require_once $page['general_default_page'];
             } else {
                 die("<h1> Error Occurred!</h1>" . $page['default_page_name'] . " doesn't exist in the ". VIEWS_DIR . DS ."  directory");
             }
@@ -122,8 +125,8 @@ if (isset($_SERVER['REQUEST_URI'])) {
                     break;
                 }
         } else {
-            if (file_exists(VIEWS_DIR . DS .  $page['default_page_name'])) {
-                require_once VIEWS_DIR . DS .  $page['default_page_name'];
+            if (file_exists($page['general_default_page'])) {
+                require_once $page['general_default_page'];
             } else {
                 die("<h1> Error Occurred!</h1>" . $page['default_page_name'] . " doesn't exist in the ". VIEWS_DIR . DS ."  directory");
             }
