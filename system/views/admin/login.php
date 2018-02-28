@@ -2,7 +2,8 @@
 
     $acc = new Account();
     if ($acc->is_login()) {
-        redirect("admin/welcome");
+        redirect("admin");
+        session_regenerate_id();
     }
 
 ?>
