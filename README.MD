@@ -8,3 +8,4 @@ This framework  comes installed with a admin dashboard, frontend view and other 
 - Dashboard is written using AdminLTE(one of the best dashboards you can get for free)
 - Medoo Database query builder class
 - New Things can simply be added with composer (php's package manager)
+- Assets can be compiled using ruby's compass or using laravel mix, or you could just write plain old css and js
