@@ -6,11 +6,11 @@
         if (get_user_role($user_id)['title'] != "admin") {
             $_SESSION['message']	= 'You are not allowed to view this page';
             $kwestion->logout_account($user_id);
-            redirect('admin/login');
+            redirect('admin/login/');
         }
     } else {
         $_SESSION['message']	= 'You need to be logged in to view this page';
-        redirect('admin/login');
+        redirect('admin/login/');
     }
 ?>
 
@@ -20,7 +20,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>AdminLTE 2 | Blank Page</title>
+		<title>
+			<?php echo (isset($title) && !empty($title)) ? ucwords($title). " | " . SITE_NAME : SITE_NAME; ?>
+		</title>
 		<!-- Tell the browser to be responsive to screen width -->
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<!-- Bootstrap 3.3.7 -->
@@ -29,6 +31,8 @@
 		<link rel="stylesheet" href="<?php echo assets('vendors/font-awesome/css/font-awesome.min.css'); ?>">
 		<!-- Ionicons -->
 		<link rel="stylesheet" href="<?php echo assets('vendors/Ionicons/css/ionicons.min.css'); ?>">
+		<!-- DataTables -->
+		<link rel="stylesheet" href="<?php echo assets('vendors/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>">
 		<!-- Theme style -->
 		<link rel="stylesheet" href="<?php echo assets('css/AdminLTE.min.css'); ?>">
 		<!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -44,6 +48,11 @@
 
 		<!-- Google Font -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+		<!-- jQuery 3 -->
+		<script src="<?php echo assets('vendors/jquery/dist/jquery.min.js'); ?>"></script>
+		<!-- CK Editor -->
+		<script src="<?php echo assets('vendors/ckeditor/ckeditor.js'); ?>"></script>
 	</head>
 
 	<body class="hold-transition skin-blue sidebar-mini">
@@ -73,6 +82,29 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
+
+					<!-- display a navbar to the left of the header -->
+					<nav class="extra-menu-navbar">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="<?php echo url(); ?>" target="_blank">
+									<span class="glyphicon glyphicon-globe"></span> &nbsp; View Website</a>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="fa fa-plus fa-md fa-fw"></i> New
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="<?php echo admin_url('users/add-new-user'); ?>">
+											<i class="fa fa-user-plus   fa-fw"></i> User
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
 
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
@@ -205,10 +237,10 @@
 									<!-- Menu Footer-->
 									<li class="user-footer">
 										<div class="pull-left">
-											<a href="<?php echo url('admin/users/edit-profile'); ?>" class="btn btn-default btn-flat">Profile</a>
+											<a href="<?php echo url('admin/users/edit-profile'); ?>" class="btn btn-default btn-flat">Edit Your Profile</a>
 										</div>
 										<div class="pull-right">
-											<a href="<?php echo url('admin/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+											<a href="<?php echo url('admin/logout/'); ?>" class="btn btn-default btn-flat">Sign out</a>
 										</div>
 									</li>
 								</ul>
