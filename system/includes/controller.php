@@ -19,3 +19,16 @@ if (!defined('SITE_URL')) {
  if (isset($_GET['who_am_i'])) {
      die("i am Kwestion Framework v3");
  }
+
+ /**
+  * ===========================================
+  * Login the user
+  * ===========================================
+  */
+  if (isset($_POST['login_now'])) {
+      extract($_POST);
+      $acc = new Account();
+      if ($acc->confirm_account($identity, $password)) {
+          redirect("admin/welcome");
+      }
+  }

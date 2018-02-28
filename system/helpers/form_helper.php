@@ -81,7 +81,7 @@ function select_box($name, $title, $description="", $helper = "", $option = [], 
  * @param string $class
  * @return void
  */
-function multi_radio_box($name, $title, $helper = "", $option = [], $class="", $selected = "")
+function multi_check_box($name, $title, $helper = "", $option = [], $class="", $selected = "")
 {
     ?>
 			<div class="checkbox">
@@ -91,7 +91,7 @@ if (is_array($option)):
         if ($selected == $option[$i]['id']):
         ?>
 					<label>
-						<input type="checkbox" name="<?php echo $name; ?>" class="form-control <?php echo $class; ?>" selected>
+						<input type="checkbox" name="<?php echo $name; ?>" class="form-control <?php echo $class; ?>" checked>
 						<?php echo $title; ?>
 					</label>
 					<?php else: ?>
@@ -206,4 +206,16 @@ function form_button($content, $class=" ", $font_icon = "check", $type="submit")
 function set_value($key = "", $else)
 {
     return isset($_POST[$key]) ? $_POST[$key] : $else[$key];
+}
+
+function check_box($name ="", $title = "", $checked = false)
+{
+    ?>
+									<div class="checkbox icheck">
+										<label>
+											<input type="checkbox" name="<?php echo $name; ?>" checked>
+											<?php echo $title; ?>
+										</label>
+									</div>
+									<?php
 }

@@ -527,7 +527,7 @@ class Account
                 // make the user offline
                 $this->make_user_offline($user_id);
             } elseif (is_string($identity)) {
-                $user_id = $this->get_user_id($identity);
+                $user_id = $this->get_account_id($identity);
 
                 // make the user offline
                 $this->make_user_offline($user_id);
@@ -562,7 +562,7 @@ class Account
       */
     public function make_user_offline(int $user_id)
     {
-        $this->update_user_account($user_id, [
+        $this->update_account($user_id, [
              'is_online' => 0
          ]);
     }
@@ -575,7 +575,7 @@ class Account
      */
     public function make_user_online(int $user_id)
     {
-        $this->update_user_account($user_id, [
+        $this->update_account($user_id, [
              'is_online' => 1
          ]);
     }
@@ -588,7 +588,7 @@ class Account
       */
     public function make_user_inactive(int $user_id)
     {
-        $this->update_user_account($user_id, [
+        $this->update_account($user_id, [
              'is_active' => 0
          ]);
     }
@@ -601,7 +601,7 @@ class Account
      */
     public function make_user_active(int $user_id)
     {
-        $this->update_user_account($user_id, [
+        $this->update_account($user_id, [
              'is_active' => 1
          ]);
     }

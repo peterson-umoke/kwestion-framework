@@ -5,6 +5,13 @@ if (!defined('SITE_URL')) {
 }
 
 /**
+ * ===========================================
+ * start session for the site
+ * ===========================================
+ */
+session_start();
+
+/**
  * This file is responsible for piecing the entire application
  *
  * @author Peterson  <umoke10@hotmail.com>

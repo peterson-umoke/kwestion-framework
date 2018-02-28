@@ -64,11 +64,11 @@ function get_user_fullname($user_id = "")
  * @param string $user_id
  * @return string
  */
-function get_user_email($user_id = "")
+function get_user_identity($user_id = "")
 {
     $data = get_user_data($user_id);
 
-    return $data['email'];
+    return $data['identity'];
 }
 
 /**
@@ -94,7 +94,7 @@ function get_user_role_desc($user_id = "")
 {
     $data = get_user_role($user_id);
 
-    return $data['role']['description'];
+    return $data['description'];
 }
 
 /**
@@ -128,4 +128,16 @@ function get_meta_value($table_name ="", $prefix="", $id ="", $key ="")
     ]);
 
     return $data['meta_value'];
+}
+
+/**
+ * Get the id of the currently logged in user
+ *
+ * @return void
+ */
+function get_user_id()
+{
+    $data = $_SESSION['login_data']['user_id'];
+
+    return $data;
 }
