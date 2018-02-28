@@ -3,7 +3,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Site under maintenance |
+	<title>
+		Error Found! |
 		<?php echo SITE_NAME; ?>
 	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,8 +57,11 @@
 </head>
 
 <body>
-	<h1>503 | Maintenance Page</h1>
-	<p>Sorry, but we are trying to run maintenance.</p>
+	<h1>
+		<?php echo (isset($title)) ? $title : ""; ?>
+	</h1>
+	<p>
+		<?php echo (isset($description)) ? $description : ""; ?>.</p>
 </body>
 
 </html>

@@ -105,3 +105,12 @@ if (!defined('PAYSTACK_SECRET_KEY')) {
 if (!defined('PAYSTACK_PUBLIC_KEY')) {
     define("PAYSTACK_PUBLIC_KEY", 'pk_test_4f2252e9ba32042fb3905c975dc421084a1044c9');
 }
+
+/**
+ * ===========================================
+ * default homepage for the custom view
+ * ===========================================
+ */
+if (!defined("CUSTOM_WELCOME_PAGE_FILE")) {
+    define("CUSTOM_WELCOME_PAGE_FILE", 'welcome.php');
+}

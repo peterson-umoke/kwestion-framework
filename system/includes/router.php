@@ -6,6 +6,7 @@ if (!defined('SITE_URL')) {
 
 // begin the path
 $page = array();
+$page['default_page_name'] = CUSTOM_WELCOME_PAGE_FILE;
 
 if (isset($_SERVER['REQUEST_URI'])) {
 
@@ -25,13 +26,64 @@ if (isset($_SERVER['REQUEST_URI'])) {
     $page['call']	= utf8_decode($page['folder_url']);
 
     // get the actual last file
-    $page['main_file'] = basename($_SERVER['PHP_SELF']);
-
-    if ($page['call'] == $page['main_file']) {
-        $page['call'] = "";
-    }
+    $page['basename'] = basename($_SERVER['PHP_SELF']);
 
     // explode the call
     $page['call_parts'] = explode('/', $page['call']);
-    print_r($page['call_parts']);
+
+    // get the key for the last value in the call parts
+    $page['basename_key']	= array_search($page['basename'], $page['call_parts']);
+
+    // remove the last key
+    if (count($page['call_parts']) > 1) {
+        unset($page['call_parts'][$page['basename_key']]);
+    }
+
+    // compile the folder name
+    $page['folder_names']	= implode(DS, $page['call_parts']);
+
+    // compile the file name
+    $page['file_name'] = $page['basename'] . '.php';
+
+    // get the file
+    $page['fullpath']	= $page['folder_names'] . DS . $page['file_name'];
+
+    // import the file making sure that no file exists as single
+    if (!empty($page['call_parts'][0])) {
+        switch ($page['call_parts'][0]) {
+            case 'admin': // checks if the folder call is admin
+                    if ($page['basename'] == 'admin') {
+                        if (file_exists(SYS_VIEWS_DIR . DS . 'admin' . DS . 'welcome.php')) {
+                            require_once SYS_VIEWS_DIR . DS . 'admin' . DS . 'welcome.php';
+                        }
+                    } else {
+                        if (file_exists(SYS_VIEWS_DIR . DS . 'admin' . DS . $page['fullpath'])) {
+                            require_once SYS_VIEWS_DIR . DS . 'admin' . DS . $page['fullpath'];
+                        } else {
+                            if (file_exists(SYS_VIEWS_DIR . DS . 'admin' . DS . '404.php')) {
+                                require_once SYS_VIEWS_DIR . DS . 'admin' . DS . '404.php';
+                            }
+                        }
+                    }
+                break;
+
+            default: // if nothing is inputted just get the path name in the custom views folder
+                    if (file_exists(VIEWS_DIR . DS . $page['fullpath'])) {
+                        require_once VIEWS_DIR . DS . $page['fullpath'];
+                    } else {
+                        if (file_exists(VIEWS_DIR . DS . 'errors' . DS . '404.php')) {
+                            require_once VIEWS_DIR . DS . 'errors' . DS . '404.php';
+                        } else {
+                            require_once SYS_VIEWS_DIR . DS . 'errors' . DS . '404.php';
+                        }
+                    }
+                break;
+        }
+    } else {
+        if (file_exists(VIEWS_DIR . DS .  $page['default_page_name'])) {
+            require_once VIEWS_DIR . DS .  $page['default_page_name'];
+        } else {
+            show_error("Homepage not found", "The Homepage has not been created please create " .  $page['default_page_name']. ' in the <b><i>'. VIEWS_DIR.DS.'</i></b> folder');
+        }
+    }
 }
