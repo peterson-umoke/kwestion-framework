@@ -497,6 +497,8 @@ class Account
                         'last_name'     => $data[$i]['last_name'],
                     );
 
+                    session_regenerate_id();
+
                     // the password match has been found
                     return true;
                 }
