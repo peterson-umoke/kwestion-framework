@@ -26,7 +26,7 @@ if (!defined('SITE_URL')) {
       define('DATABASE_USERNAME', 'root');
   }
   if (!defined('DATABASE_NAME')) {
-      define('DATABASE_NAME', 'khanstore_db');
+      define('DATABASE_NAME', '');
   }
   if (!defined('DATABASE_TYPE')) {
       define('DATABASE_TYPE', 'mysql');
@@ -49,13 +49,30 @@ if (!defined('SITE_URL')) {
  * Global Variable for the Kf_Database Connection
  * =====================================
  */
- global $kwestion;
+ global $kf_database;
 
 /**
   * ==============================
   * database connection array for the medoo class
   * ==============================
   */
+  if (null === DATABASE_TYPE) {
+      die("No DATABASE_TYPE set, Please define it in the config directory for the database file");
+  }
+  if (null === DATABASE_NAME) {
+      die("No DATABASE_NAME set, Please define it in the config directory for the database file");
+  }
+  if (null === DATABASE_HOST) {
+      die("No DATABASE_HOST set, Please define it in the config directory for the database file");
+  }
+  if (null === DATABASE_USERNAME) {
+      die("No DATABASE_USERNAME set, Please define it in the config directory for the database file");
+  }
+  if (null === DATABASE_PASSWORD) {
+      die("No DATABASE_PASSWORD set, Please define it in the config directory for the database file");
+  }
+
+  // store the values
  if (!defined("DATABASE_SETTINGS")) {
      define("DATABASE_SETTINGS", [
         'database_type' => DATABASE_TYPE,
@@ -73,4 +90,4 @@ if (!defined('SITE_URL')) {
   * database connection variable
   * ==============================
   */
- $kwestion = new Kf_Database($db_settings);
+ $kf_database = new Kf_Database($db_settings);

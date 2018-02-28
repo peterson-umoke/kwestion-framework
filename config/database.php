@@ -15,3 +15,4 @@ if (!defined('SITE_URL')) {
   * 	DATABASE_NAME
   * ===========================================
   */
+define("DATABASE_NAME", 'kwestion_db');

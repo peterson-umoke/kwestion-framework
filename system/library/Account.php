@@ -1,15 +1,18 @@
 <?php
 
+use Medoo\Medoo;
 
 if (!defined('SITE_URL')) {
     exit('No Direct access to page');
 }
 
-class Account extends Database
+class Account
 {
+    private $dbclass;
+
     public function __construct()
     {
-        parent::__construct();
+        $this->dbclass = new Medoo(DATABASE_SETTINGS);
     }
 
     /**
@@ -24,10 +27,10 @@ class Account extends Database
      */
     public function create_account($identity, $password, $first_name, $last_name, $role)
     {
-        if (!$this->check_email($identity)) {
+        if (!$this->confirm_identity($identity)) {
 
             // if the new user was created successfully
-            if ($this->insert('users', [
+            if ($this->dbclass->insert('users', [
                 'identity'         => $identity,
                 'password'      => password_hash($password, PASSWORD_DEFAULT),
                 'created_on'    => time(),
@@ -38,11 +41,11 @@ class Account extends Database
                 'first_name'    => $first_name,
                 'last_name'     =>  $last_name,
             ])) {
-                $user_id = $this->id(); // get the last inserted id
+                $user_id = $this->dbclass->id(); // get the last inserted id
                 $role_id = $this->get_role_id($role); // get the role id
 
                 // create a new role for the user
-                $this->create_user_meta($user_id, 'user_role', $role_id);
+                $this->create_meta($user_id, 'user_role', $role_id);
             }
         }
 
@@ -59,7 +62,7 @@ class Account extends Database
      */
     public function create_meta($user_id, $key, $value)
     {
-        $this->insert('users_meta', [
+        $this->dbclass->insert('users_meta', [
             'user_id'    => $user_id,
             'meta_key'   => $key,
             'meta_value' => $value,
@@ -79,9 +82,11 @@ class Account extends Database
     {
         // checks if the role exists first
         if (!$this->confirm_role($role_name)) {
-            $this->insert('roles', [
+            $this->dbclass->insert('roles', [
                 'title'        => $role_name,
-                'description' => $role_description
+                'description' => $role_description,
+                'created_on'	=> time(),
+                'modified_on'	=> time()
             ]);
 
             // the role was created successfully
@@ -110,7 +115,7 @@ class Account extends Database
             $this->make_user_inactive($user_id);
             $this->make_user_offline($user_id);
 
-            if ($this->insert('password_resets', [
+            if ($this->dbclass->insert('password_resets', [
                  'email'      => $email,
                  'token'      => $token,
                  'created_on' =>  time(),
@@ -130,8 +135,8 @@ class Account extends Database
      */
     public function delete_account(int $user_id)
     {
-        $this->delete("users", ['id' => $user_id]);
-        $this->delete("users_meta", ['user_id' => $user_id]);
+        $this->dbclass->delete("users", ['id' => $user_id]);
+        $this->dbclass->delete("users_meta", ['user_id' => $user_id]);
     }
 
     /**
@@ -142,7 +147,7 @@ class Account extends Database
       */
     public function delete_user_meta(int $user_id)
     {
-        if ($this->delete('users_meta', [
+        if ($this->dbclass->delete('users_meta', [
              'user_id' => $user_id
          ])) {
             return true;
@@ -159,7 +164,7 @@ class Account extends Database
       */
     public function delete_single_user_meta(int $user_id, $key = "")
     {
-        if ($this->delete('users_meta', [
+        if ($this->dbclass->delete('users_meta', [
              'user_id' => $user_id,
              'meta_key'	=> $key
          ])) {
@@ -182,7 +187,7 @@ class Account extends Database
          // add the modified time here
         $data['modified_on'] = time();
 
-        if ($this->update('users', $data, [
+        if ($this->dbclass->update('users', $data, [
              'id'          => $user_id,
          ])) {
             return true;
@@ -201,7 +206,7 @@ class Account extends Database
      */
     public function update_single_meta(int $user_id, $key, $value)
     {
-        if ($this->update('users_meta', [
+        if ($this->dbclass->update('users_meta', [
               'meta_value'	=> $value
           ], [
               'user_id' => $user_id,
@@ -219,7 +224,7 @@ class Account extends Database
      */
     public function get_account(int $user_id)
     {
-        return $this->get("users", "*", ['id' => $user_id]);
+        return $this->dbclass->get("users", "*", ['id' => $user_id]);
     }
 
     /**
@@ -230,7 +235,7 @@ class Account extends Database
      */
     public function get_account_id(string $identity)
     {
-        return $this->get("users", "id", ['identity' => $identity]);
+        return $this->dbclass->get("users", "id", ['identity' => $identity]);
     }
 
     /**
@@ -240,7 +245,7 @@ class Account extends Database
      */
     public function get_accounts()
     {
-        return $this->select("users", "*");
+        return $this->dbclass->select("users", "*");
     }
 
     /**
@@ -250,7 +255,7 @@ class Account extends Database
      */
     public function get_roles()
     {
-        return $this->select("roles", "*");
+        return $this->dbclass->select("roles", "*");
     }
 
     /**
@@ -261,7 +266,7 @@ class Account extends Database
      */
     public function get_role($role_id)
     {
-        return $this->get("roles", "*", ['id' => $role_id]);
+        return $this->dbclass->get("roles", "*", ['id' => $role_id]);
     }
 
     /**
@@ -272,7 +277,7 @@ class Account extends Database
      */
     public function get_role_by_title($role_id)
     {
-        return $this->get("roles", "*", ['id' => $role_id]);
+        return $this->dbclass->get("roles", "*", ['id' => $role_id]);
     }
 
     /**
@@ -283,7 +288,7 @@ class Account extends Database
      */
     public function get_role_id($title)
     {
-        return $this->get("roles", "id", ['title' => $title]);
+        return $this->dbclass->get("roles", "id", ['title' => $title]);
     }
 
     /**
@@ -294,7 +299,7 @@ class Account extends Database
      */
     public function get_role_description_by_title($title)
     {
-        return $this->get("roles", "description", ['title' => $title]);
+        return $this->dbclass->get("roles", "description", ['title' => $title]);
     }
 
     /**
@@ -305,7 +310,7 @@ class Account extends Database
      */
     public function get_role_description_by_id($id)
     {
-        return $this->get("roles", "description", ['id' => $id]);
+        return $this->dbclass->get("roles", "description", ['id' => $id]);
     }
 
     /**
@@ -316,7 +321,7 @@ class Account extends Database
       */
     public function get_single_meta_value($user_id, $key)
     {
-        $data = $this->get("users_meta", [
+        $data = $this->dbclass->get("users_meta", [
               'meta_value'
           ], [
               'user_id' => $user_id,
@@ -341,7 +346,7 @@ class Account extends Database
         }
 
         //  get the user data
-        $userdata = $this->get("users", "*", [
+        $userdata = $this->dbclass->get("users", "*", [
               'id' 	=> $identity
           ]);
 
@@ -350,7 +355,7 @@ class Account extends Database
         $billing_address = $this->get_single_meta_value($user_id, 'billing_address');
         $payment_method = $this->get_single_meta_value($user_id, 'payment_method');
         $billing_state = $this->get_single_meta_value($user_id, 'billing_state');
-        $roledata = $this->get("roles", "*", [
+        $roledata = $this->dbclass->get("roles", "*", [
               'id'	=> $role_id
           ]);
 
@@ -370,7 +375,7 @@ class Account extends Database
      */
     public function confirm_identity($identity = "")
     {
-        if ($this->has("users", ['identity' => $identity])) {
+        if ($this->dbclass->has("users", ['identity' => $identity])) {
             return true;
         };
 
@@ -385,7 +390,7 @@ class Account extends Database
      */
     public function confirm_role(string $role)
     {
-        if ($this->has('roles', [
+        if ($this->dbclass->has('roles', [
              'title'  => $role
          ])) {
             return true;
@@ -404,7 +409,7 @@ class Account extends Database
      */
     public function confirm_meta(int $user_id, string $key, $value)
     {
-        if ($this->has('users_meta', [
+        if ($this->dbclass->has('users_meta', [
            'user_id'    => $user_id,
            'meta_key'   => $key,
            'meta_value' => $value,
@@ -425,7 +430,7 @@ class Account extends Database
      */
     public function confirm_meta_key(int $user_id, string $key)
     {
-        if ($this->has('users_meta', [
+        if ($this->dbclass->has('users_meta', [
             'user_id'    => $user_id,
             'meta_key'   => $key,
         ])) {
@@ -465,7 +470,7 @@ class Account extends Database
         // checks if the idneity$identity exists first
         if ($this->confirm_identity($identity)) {
             // since the email was found
-            $data = $this->select('users', [
+            $data = $this->dbclass->select('users', [
                'id',
                 'identity',
                 'password',
