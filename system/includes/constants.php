@@ -21,7 +21,7 @@ if (!defined('SYSTEM_DIR')) {
 
 /**
  * ===========================================
- * define the includes directory path
+ * define the system includes directory path
  * ===========================================
  */
 if (!defined('INCLUDES_DIR')) {
@@ -169,7 +169,7 @@ if (!defined('LIBRARY_DIR_NAME')) {
  * ===========================================
  */
 if (!defined('COMPOSER_PACKAGES_DIR_NAME')) {
-    define("COMPOSER_PACKAGES_DIR_NAME", 'vendors');
+    define("COMPOSER_PACKAGES_DIR_NAME", 'vendor');
 }
 
 /**
@@ -207,3 +207,12 @@ if (!defined('COMPOSER_PACKAGES_DIR_NAME')) {
   if (!defined('UPLOADS_DIR_STRUCTURE')) {
       define("UPLOADS_DIR_STRUCTURE", date("Y")."/".date("M")."/".date("d")."/");
   }
+
+  /**
+  * ===========================================
+  * define the default page key
+  * ===========================================
+  */
+//   if (!defined('DEFAULT_PAGE_KEY')) {
+//       define("DEFAULT_PAGE_KEY", "pg");
+//   }

@@ -14,7 +14,7 @@ if (!defined('SITE_URL')) {
  {
      $folders = [
         SYS_LIBRARY_DIR . DS . $classname . '.php',
-        LIBRAY_DIR . DS . $classname . '.php',
+        LIBRARY_DIR . DS . $classname . '.php',
      ];
 
      for ($i = 0; $i < count($folders); $i++) {

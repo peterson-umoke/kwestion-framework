@@ -13,7 +13,11 @@ if (!defined('SITE_URL')) {
  */
 
 if (MAINTENANCE_MODE === true) {
-    require_once VIEWS_DIR . '/templates/503.php';
+    if (file_exists(VIEWS_DIR . DS . 'errors' . DS . '503.php')) {
+        require_once VIEWS_DIR . DS . 'errors' . DS . '503.php';
+    } else {
+        require SYS_VIEWS_DIR . DS . 'errors' . DS . '503.php';
+    }
 
     die();
 }
