@@ -69,7 +69,7 @@ if (!defined('SITE_URL')) {
      function redirect($dest = "")
      {
          if (!empty($dest)) {
-             header("Location:" . url($dest));
+             header("Location:" . url($dest . "/") ."/");
          }
 
          // quit the script from running anymore
