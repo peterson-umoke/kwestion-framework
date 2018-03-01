@@ -13,7 +13,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>
-			Log in |
+			Reset Your Password |
 			<?php echo SITE_NAME; ?> | Admin </title>
 		<!-- Tell the browser to be responsive to screen width -->
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -51,40 +51,23 @@
 			<div class="login-box-body">
 				<p class="login-box-msg">
 					<?php
-                    if (isset($_SESSION['message'])) {
-                        echo '<span class="text-black">'.$_SESSION['message'].'</span>';
-                    } else {
-                        echo "Sign in To start your session";
-                    }
-
+                        echo "Reset Your Password To start your session";
                     ?>
 				</p>
 
 				<form action="" method="post">
-					<?php echo input_hidden_box("login_now"); ?>
+					<?php echo input_hidden_box("reset_password"); ?>
 					<?php echo input_box('identity', 'Email', 'Enter Your Identity', ''); ?>
-					<?php echo input_box('password', 'Password', 'Enter Your Password', '', 'password'); ?>
+					<?php echo input_box('password', 'New Password', 'Enter Your Password', '', 'password'); ?>
 					<div class="row">
-						<div class="col-xs-8">
-							<div class="checkbox icheck">
-								<label>
-									<input type="checkbox"> Remember Me
-								</label>
-							</div>
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-primary btn-block btn-flat">Reset Password</button>
 						</div>
-						<!-- /.col -->
-						<div class="col-xs-4">
-							<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-						</div>
-						<!-- /.col -->
 					</div>
 				</form>
 
-				<a href="<?php echo admin_url('reset-password/'); ?>">I forgot my password</a>
-				<br>
-				<br>
-				<a href="<?php echo url(); ?>" class="btn btn-flat btn-primary btn-block text-center">
-					<i class="fa fa-arrow-left"></i> Back to Site</a>
+				<a href="<?php echo admin_url('login/'); ?>" class="btn btn-flat btn-default btn-block text-center" style="margin-top:5px;">
+					<i class="fa fa-arrow-left"></i> Back to Login</a>
 				<p class="text-center">
 					<br> &copy;
 					<b>

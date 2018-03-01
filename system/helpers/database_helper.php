@@ -107,7 +107,7 @@ function get_user_role_name($user_id = "")
 {
     $data = get_user_role($user_id);
 
-    return $data['role']['name'];
+    return $data['title'];
 }
 
 /**

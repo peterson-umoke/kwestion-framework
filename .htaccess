@@ -336,6 +336,8 @@ AddDefaultCharset utf-8
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ index.php/$1 [L]
+	RewriteRule ^(.*)/$ index.php/$1 [L]
+	RewriteRule ^/(.*)/$ index.php/$1/ [L]
 	# RewriteRule ^([a-zA-Z0-9]+)$ index.php?pg=$1
 	# RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?pg=$1&&action=$2
 	# RewriteRule ^([a-zA-Z0-9]+)/$ index.php?pg=$1

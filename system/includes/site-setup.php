@@ -114,3 +114,13 @@ if (!defined('PAYSTACK_PUBLIC_KEY')) {
 if (!defined("CUSTOM_WELCOME_PAGE_FILE")) {
     define("CUSTOM_WELCOME_PAGE_FILE", 'welcome.php');
 }
+
+
+/**
+ * ===========================================
+ * state the default view file for the homepage
+ * ===========================================
+ */
+if (!defined("DEFAULT_VIEW_PAGE")) {
+    define("DEFAULT_VIEW_PAGE", VIEWS_DIR . DS .  CUSTOM_WELCOME_PAGE_FILE);
+}

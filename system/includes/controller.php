@@ -29,6 +29,6 @@ if (!defined('SITE_URL')) {
       extract($_POST);
       $acc = new Account();
       if ($acc->confirm_account($identity, $password)) {
-          redirect("admin/welcome");
+          redirect("admin/welcome/");
       }
   }

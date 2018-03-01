@@ -41,7 +41,7 @@ function input_box($name, $title, $description ="", $helper = "", $type="text", 
  * @param string $class
  * @return void
  */
-function select_box($name, $title, $description="", $helper = "", $option = [], $class="", $selected = "")
+function select_box($name, $title, $description="", $helper = "", $option = [], $loop_key = "", $class="", $selected = "")
 {
     ?>
 		<label for="<?php echo $name; ?>">
@@ -51,15 +51,15 @@ function select_box($name, $title, $description="", $helper = "", $option = [], 
 			<option value="">---</option>
 			<?php
 
-            if (is_array($option)):
-                for ($i = 0; $i < count($option); $i++):
-                    if ($selected == $option[$i]['id']):
-                    ?>
+    if (is_array($option)):
+        for ($i = 0; $i < count($option); $i++):
+            if ($selected == $option[$i]['id']):
+                ?>
 				<option value="<?php echo $option[$i]['id']; ?>" selected>
 					<?php else: ?>
 					<option value="<?php echo $option[$i]['id']; ?>">
 						<?php endif; ?>
-						<?php echo $option[$i]['title']; ?>
+						<?php echo (isset($loop_key) && !empty($loop_key)) ? ucwords($option[$i][$loop_key]) : ucwords($option[$i]['title']); ?>
 					</option>
 					<?php
                 endfor;
@@ -197,6 +197,25 @@ function form_button($content, $class=" ", $font_icon = "check", $type="submit")
 }
 
 /**
+ * create a Bootstrap button for the form that is by default submit
+ *
+ * @param string $content
+ * @param string $class
+ * @param string $type
+ * @return void
+ */
+function anchor_button($content, $href="", $class=" ", $font_icon = "check")
+{
+    ?>
+									<a href="<?php echo url($href); ?>" class="btn btn-flat
+<?php echo $class; ?>">
+										<i class="fa fa-<?php echo $font_icon; ?>"></i>
+										<?php echo ucwords($content); ?>
+									</a>
+									<?php
+}
+
+/**
  * set the post value if the form is submitted and contains errors otherwise set the database value
  *
  * @param string $key
@@ -211,11 +230,11 @@ function set_value($key = "", $else)
 function check_box($name ="", $title = "", $checked = false)
 {
     ?>
-									<div class="checkbox icheck">
-										<label>
-											<input type="checkbox" name="<?php echo $name; ?>" checked>
-											<?php echo $title; ?>
-										</label>
-									</div>
-									<?php
+										<div class="checkbox icheck">
+											<label>
+												<input type="checkbox" name="<?php echo $name; ?>" checked>
+												<?php echo $title; ?>
+											</label>
+										</div>
+										<?php
 }

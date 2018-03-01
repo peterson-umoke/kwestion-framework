@@ -15,6 +15,9 @@
 <script src="<?php echo assets('vendors/jquery-slimscroll/jquery.slimscroll.min.js'); ?>"></script>
 <!-- FastClick -->
 <script src="<?php echo assets('vendors/fastclick/lib/fastclick.js'); ?>"></script>
+<!-- DataTables -->
+<script src="<?php echo assets('vendors/datatables.net/js/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo assets('vendors/datatables.net-bs/js/dataTables.bootstrap.min.js'); ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo assets('js/adminlte.min.js'); ?>"></script>
 <script>

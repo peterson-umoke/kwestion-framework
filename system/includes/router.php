@@ -6,8 +6,7 @@ if (!defined('SITE_URL')) {
 
 // begin the path
 $page = array();
-$page['default_page_name'] = CUSTOM_WELCOME_PAGE_FILE;
-$page['general_default_page'] = VIEWS_DIR . DS .  $page['default_page_name'];
+$page['general_default_page'] = DEFAULT_VIEW_PAGE;
 
 if (isset($_SERVER['REQUEST_URI'])) {
 

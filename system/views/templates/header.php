@@ -97,7 +97,7 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="<?php echo admin_url('users/add-new-user'); ?>">
+										<a href="<?php echo admin_url('users/create-user'); ?>">
 											<i class="fa fa-user-plus   fa-fw"></i> User
 										</a>
 									</li>
@@ -123,7 +123,7 @@
 												<!-- start message -->
 												<a href="#">
 													<div class="pull-left">
-														<img src="<?php echo assets('/img/user2-160x160.jpg'); ?>" class="img-circle" alt="User Image">
+														<img src="<?php echo get_user_thumbnail(); ?>" class="img-circle" alt="User Image">
 													</div>
 													<h4>
 														Support Team
@@ -200,7 +200,7 @@
 							<!-- User Account: style can be found in dropdown.less -->
 							<li class="dropdown user user-menu">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									<img src="<?php echo assets('/img/user2-160x160.jpg'); ?>" class="user-image" alt="User Image">
+									<img src="<?php echo get_user_thumbnail(); ?>" class="user-image" alt="User Image">
 									<span class="hidden-xs">
 										<?php echo get_user_fullname() ?>
 									</span>
@@ -208,7 +208,7 @@
 								<ul class="dropdown-menu">
 									<!-- User image -->
 									<li class="user-header">
-										<img src="<?php echo assets('/img/user2-160x160.jpg'); ?>" class="img-circle" alt="User Image">
+										<img src="<?php echo get_user_thumbnail(); ?>" class="img-circle" alt="User Image">
 
 										<p>
 											<?php echo get_user_fullname() ?>

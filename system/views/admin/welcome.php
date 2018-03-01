@@ -1,4 +1,4 @@
-<?php get_admin_template('templates/header'); ?>
+<?php get_admin_template('templates/header', ['title' => 'Dashboard']); ?>
 <?php get_admin_template('templates/sidebar'); ?>
 
 <!-- Content Wrapper. Contains page content -->
