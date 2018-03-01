@@ -104,7 +104,7 @@ if (isset($_POST['reset_password'])) {
      // create the account
      if (!empty($identity) && isset($identity)) {
          $role_name = $kf_database->get("roles", 'title', ['id' => $user_role]);
-         $last_id = $account->create_account($identity, $password, $first_name, $last_name, $user_role);
+         $last_id = $account->create_account($identity, $password, $first_name, $last_name, $role_name);
 
          //  update the profile picture
          if (isset($_FILES['thumbnail_url']) && !empty($_FILES['thumbnail_url'])) {
@@ -113,7 +113,7 @@ if (isset($_POST['reset_password'])) {
              ]);
          }
 
-         //  refresh the page
+         //   refresh the page
          redirect("admin/users/edit-profile?show_success_message=1&&user_id=".$last_id);
      }
  }
