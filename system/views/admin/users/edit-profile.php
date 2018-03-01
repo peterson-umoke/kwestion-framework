@@ -21,7 +21,7 @@
 		<!-- Main content -->
 		<section class="content">
 
-			<form action="" method="post">
+			<form action="" method="post" enctype="multipart/form-data">
 				<?php echo input_hidden_box('update_account', $user_id); ?>
 				<div class="row">
 					<div class="col-md-9">
@@ -74,7 +74,7 @@
 										<?php echo select_box('user_role', 'Choose the User Role', '', 'choose the role of the user', $roles, 'description', '', get_user_role($user_id)['id']); ?>
 									</div>
 									<div class="col-md-6">
-										<?php echo input_box('password', 'New Password', 'E.g Ad***ke', '', ''); ?>
+										<?php echo input_box('password', 'New Password', 'E.g Ad***ke', '', 'password'); ?>
 									</div>
 								</div>
 							</div>
@@ -99,7 +99,7 @@
 							</div>
 							<div class="box-body">
 								<?php echo form_button('Update account', 'btn-block btn-primary'); ?>
-								<?php echo anchor_button('delete account', 'users/delete-profile?user_id='.$user_id, 'btn-block btn-danger', 'times'); ?>
+								<?php echo anchor_button('delete account', 'admin/users/delete-profile?user_id='.$user_id, 'btn-block btn-danger', 'times'); ?>
 							</div>
 						</div>
 						<!-- /.box -->
@@ -119,7 +119,8 @@
 								</div>
 							</div>
 							<div class="box-body text-center">
-								<img src="<?php echo get_user_thumbnail($user_id); ?>" alt="" class="img-circle  text-center center-block img-responsive">
+								<img src="<?php echo get_user_thumbnail($user_id); ?>" alt="" class="img-circle  text-center center-block img-responsive"
+								 style="width:100px;height:100px;">
 							</div>
 						</div>
 						<!-- /.box -->

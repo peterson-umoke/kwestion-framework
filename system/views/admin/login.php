@@ -1,5 +1,4 @@
 <?php
-
     $acc = new Account();
     if ($acc->is_login()) {
         redirect("admin");

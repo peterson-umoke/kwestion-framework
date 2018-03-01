@@ -4,6 +4,6 @@
 $user_id = $_GET['user_id'];
 
 $acc = new Account();
-$acc->delete_account($user);
+$acc->delete_account($user_id);
 
-redirect('admin/users?show_message=successfully deleted account');
+redirect('admin/users/all-users?show_success_message=1');

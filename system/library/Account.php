@@ -46,6 +46,8 @@ class Account
 
                 // create a new role for the user
                 $this->create_meta($user_id, 'user_role', $role_id);
+
+                return $user_id;
             }
         }
 
@@ -74,8 +76,8 @@ class Account
     /**
      * create role
      *
-     * @param [type] $role_name
-     * @param [type] $role_description
+     * @param string $role_name
+     * @param string $role_description
      * @return void
      */
     public function create_role($role_name, $role_description)

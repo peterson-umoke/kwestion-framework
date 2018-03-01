@@ -26,7 +26,7 @@ function upload_image($image, $dest = '', $tablename = '', $fieldname = 'thumbna
         $handle->image_resize         = true;
         $handle->image_x              = 500;
         $handle->image_ratio_y        = true;
-        $handle->process('uploads/'.$dest);
+        $handle->process(UPLOADS_DIR_NAME . '/'.$dest);
         if ($handle->processed) {
             // echo 'image resized';
             $image_name = $handle->file_dst_pathname;

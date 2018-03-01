@@ -101,6 +101,11 @@
 											<i class="fa fa-user-plus   fa-fw"></i> User
 										</a>
 									</li>
+									<li>
+										<a href="<?php echo admin_url('users/roles'); ?>">
+											<i class="fa fa-user-plus   fa-fw"></i> Role
+										</a>
+									</li>
 								</ul>
 							</li>
 						</ul>
