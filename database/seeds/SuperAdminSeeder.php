@@ -15,7 +15,13 @@ class SuperAdminSeeder extends Seeder
     {
         //
         $admin  = factory(Admin::class)
-            ->create(['email' => "super@app.com", 'first_name' => 'Peterson', 'last_name' => 'Umoke']);
+            ->create(
+                [
+                    'first_name' => 'Peterson',
+                    'last_name' => 'Umoke',
+                    'email' => "super@app.com",
+                ]
+            );
         $role = factory(Role::class)->create(
             [
                 'name' => "super",
@@ -23,8 +29,15 @@ class SuperAdminSeeder extends Seeder
                 'description' => "The Super Administrator Role",
             ]
         );
+        $adminrole = factory(Role::class)->create(
+            [
+                'name' => "admin",
+                'title' => "Administrator",
+                'description' => "The Administrator Role",
+            ]
+        );
         $admin->roles()->attach($role);
-        factory(App\User::class, 2999)->create();
+        factory(App\User::class, 9)->create();
         factory(App\User::class)->create([
             'email' => 'user@app.com',
             'first_name' => 'David',
