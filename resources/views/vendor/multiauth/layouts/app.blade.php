@@ -13,16 +13,19 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//cdn.lineicons.com">
     <link rel="dns-prefetch" href="//cdn.linearicons.com">
+    <link rel="dns-prefetch" href="//use.fontawesome.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
 
     <!-- Styles -->
     <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 
@@ -89,7 +92,7 @@
                 <li class="menu-item">
                     <a href="{{ route('admin.home') }}">
                         <span>
-                            <svg class="lnr lnr-chart-bars">
+                            <svg class="same-icon-size lnr lnr-chart-bars">
                                 <use xlink:href="#lnr-chart-bars"></use>
                             </svg>
                         </span>
