@@ -1,5 +1,5 @@
 @extends('multiauth::layouts.app') @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -25,18 +25,17 @@
                             <select name="role_id[]" id="role_id" class="form-control col-md-6 {{ $errors->has('role_id') ? ' is-invalid' : '' }}" multiple>
                                 <option selected disabled>Select Role</option>
                                 @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}" 
-                                        @if (in_array($role->id,$admin->roles->pluck('id')->toArray())) 
-                                            selected 
-                                        @endif >{{ $role->name }}
-                                    </option>
+                                <option value="{{ $role->id }}" @if (in_array($role->id,$admin->roles->pluck('id')->toArray()))
+                                    selected
+                                    @endif >{{ $role->name }}
+                                </option>
                                 @endforeach
-                            </select> 
+                            </select>
 
                             @if ($errors->has('role_id'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('role_id') }}</strong>
-                                </span> 
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('role_id') }}</strong>
+                            </span>
                             @endif
                         </div>
 

@@ -1,6 +1,6 @@
-@extends('multiauth::layouts.app') 
+@extends('multiauth::layouts.app')
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -11,16 +11,16 @@
                     </span>
                 </div>
                 <div class="card-body">
-    @include('multiauth::message')
+                    @include('multiauth::message')
                     <ul class="list-group">
                         @foreach ($admins as $admin)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $admin->name }}
                             <span class="badge">
-                                    @foreach ($admin->roles as $role)
-                                        <span class="badge-warning badge-pill ml-2">
-                                            {{ $role->name }}
-                                        </span> @endforeach
+                                @foreach ($admin->roles as $role)
+                                <span class="badge-warning badge-pill ml-2">
+                                    {{ $role->name }}
+                                </span> @endforeach
                             </span>
                             {{ $admin->active? 'Active' : 'Inactive' }}
                             <div class="float-right">
