@@ -1,0 +1,14 @@
+.overall-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: table !important;
+    > .row {
+        vertical-align: middle;
+
+        > .column {
+            margin: auto;
+            width: 365px;
+        }
+    }
+}

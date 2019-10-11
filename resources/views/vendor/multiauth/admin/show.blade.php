@@ -1,4 +1,4 @@
-@extends('multiauth::layouts.app')
+@extends('multiauth::layouts.dashboard')
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">

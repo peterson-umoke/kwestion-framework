@@ -1,8 +1,5 @@
-@extends('multiauth::layouts.app')
+@extends('multiauth::layouts.dashboard')
 @section('content')
-<!-- <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-8"> -->
 <div class="card">
     <div class="card-header">{{ ucfirst(config('multiauth.prefix')) }} Dashboard</div>
 
@@ -11,7 +8,4 @@
         You are logged in to {{ config('multiauth.prefix') }} side!
     </div>
 </div>
-<!-- </div>
-    </div>
-</div> -->
 @endsection

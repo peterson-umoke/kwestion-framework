@@ -10653,13 +10653,17 @@ body {
   position: static;
 }
 
+.navbar-top > nav {
+  min-height: 60px;
+}
+
 .navbar-left {
   position: fixed;
   width: 90px;
   padding-top: 20px;
   border-right: 1px solid rgba(163, 163, 163, 0.2);
   height: auto;
-  top: 60px;
+  top: 65px;
   bottom: 0;
   left: 0;
   z-index: 2;
@@ -10743,14 +10747,59 @@ body {
 .lnr {
   display: inline-block;
   fill: currentColor;
-  width: 48px;
-  height: 48px;
+  width: 1em;
+  height: 1em;
   vertical-align: 0.2em;
 }
 
 .same-icon-size {
-  width: 48px;
-  height: 48px;
-  font-size: 48px;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+}
+
+.user-details {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user-details .name {
+  display: block;
+  color: #000311;
+  text-align: left;
+}
+
+.user-details .role {
+  font-size: 14px;
+  color: #8e8e8e;
+  display: block;
+  text-align: left;
+}
+
+.userdropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.6em solid;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0;
+  border-left: 0.5em solid transparent;
+}
+
+.overall-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: table !important;
+}
+
+.overall-container > .row {
+  vertical-align: middle;
+}
+
+.overall-container > .row > .column {
+  margin: auto;
+  width: 365px;
 }
 

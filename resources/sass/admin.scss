@@ -1,10 +1,11 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
-@import 'admin-layout';
+@import "~bootstrap/scss/bootstrap";
+@import "admin/admin-layout";
+@import "admin/login";
