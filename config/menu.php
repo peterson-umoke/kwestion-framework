@@ -43,6 +43,25 @@ return [
                         'title' => 'wire the funds now',
                         'route' => 'guest.welcome',
                     ),
+                    array(
+                        'title' => 'wire the funds now',
+                        'route' => 'guest.welcome',
+                    ),
+                ),
+            ),
+            array(
+                'title' => 'roles',
+                'icon' => '<svg class="same-icon-size lnr lnr-users"><use xlink:href="#lnr-users"></use></svg>',
+                'route' => 'admin.roles',
+                'children' => array(
+                    array(
+                        'title' => 'all roles',
+                        'route' => 'admin.roles',
+                    ),
+                    array(
+                        'title' => 'add role',
+                        'route' => 'admin.role.create',
+                    ),
                 ),
             ),
             array(
