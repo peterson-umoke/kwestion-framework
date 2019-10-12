@@ -45,7 +45,7 @@
                             <a class="dropdown-item" href="{{ route('admin.show') }}">{{ ucfirst(config('multiauth.prefix')) }}</a>
                             <a class="dropdown-item" href="{{ route('admin.roles') }}">Roles</a>
                             @endadmin -->
-                            <h3 class="dropdown-header" style="font-size:0.9835rem;">My Account</h3>
+                            <h3 class="dropdown-header text-uppercase" style="font-size:0.9835rem;">Account</h3>
                             <a class="dropdown-item" href="{{ route('guest.welcome') }}" target="_blank">Visit Site</a>
                             <a class="dropdown-item" href="#" target="_blank">Profile</a>
                             <a class="dropdown-item" href="{{ route('admin.password.change') }}">Change Password</a>

@@ -1,4 +1,6 @@
 @extends('multiauth::layouts.dashboard')
+@section("page-title","Hello")
+@section("page-title","Dashboard")
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">

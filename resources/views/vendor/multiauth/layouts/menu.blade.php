@@ -1,44 +1,14 @@
 <nav class="navbar-left position-fixed">
     <ul class="menubar">
-        <li class="menu-item">
-            <a href="{{ route('admin.home') }}">
+        @foreach(config("menu.admin.sidebar") as $key)
+        <li class="menu-item {{ array_key_exists('route',$key) ? request()->route()->getName() == $key['route'] ? 'active' : '' : ''}}{{ array_key_exists('url',$key) ? request()->path() == $key['url'] ? 'active' : '' : ''}}" {{array_key_exists('attr',$key) ? $key['attr'] : ""}}>
+            <a href="{{ (array_key_exists('route', $key) && !empty($key['route'])) ? route($key['route']) : url($key['url'] ?? '#')}}">
                 <span>
-                    <svg class="same-icon-size lnr lnr-chart-bars">
-                        <use xlink:href="#lnr-chart-bars"></use>
-                    </svg>
+                    {!!$key['icon']!!}
                 </span>
-                <span>dashboard</span>
+                <span>{{$key['title']}}</span>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="{{ route('admin.home') }}">
-                <span>
-                    <svg class="same-icon-size lnr lnr-users">
-                        <use xlink:href="#lnr-users"></use>
-                    </svg>
-                </span>
-                <span>users</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('admin.home') }}">
-                <span>
-                    <svg class="same-icon-size lnr lnr-pencil">
-                        <use xlink:href="#lnr-pencil"></use>
-                    </svg>
-                </span>
-                <span>Pages</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('admin.home') }}">
-                <span>
-                    <svg class="same-icon-size lnr lnr-cog">
-                        <use xlink:href="#lnr-cog"></use>
-                    </svg>
-                </span>
-                <span>settings</span>
-            </a>
-        </li>
+        @endforeach
     </ul>
 </nav>
