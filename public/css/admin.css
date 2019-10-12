@@ -10787,6 +10787,10 @@ body {
   border-left: 0.5em solid transparent;
 }
 
+.specialUserDropdwo {
+  min-width: 15rem;
+}
+
 .overall-container {
   height: 100%;
   width: 100%;
