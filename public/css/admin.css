@@ -10687,6 +10687,10 @@ body {
   text-transform: uppercase;
 }
 
+.navbar-left .menubar li.menu-item.active a {
+  color: #3490dc;
+}
+
 .navbar-left .menubar li.menu-item a {
   color: #a2a2a2;
   text-decoration: none;

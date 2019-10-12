@@ -1,5 +1,5 @@
 <nav class="navbar-top">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-0">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-0 fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('admin.home') }}">
                 {{ config('app.name', 'Laravel') }}

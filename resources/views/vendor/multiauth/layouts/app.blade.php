@@ -27,12 +27,16 @@
     <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    @yield("head")
+    @yield("css")
 </head>
 
-<body>
+<body style="scroll-behavior: smooth;">
     <div id="app">
         @yield("app-content")
     </div>
 </body>
+
+@stack("scripts")
 
 </html>

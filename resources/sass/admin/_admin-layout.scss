@@ -1,3 +1,5 @@
+$menubar_left_active: $blue;
+
 %common {
     top: 65px;
     bottom: 0;
@@ -38,6 +40,12 @@ body {
             font-size: 11px;
             text-align: center;
             text-transform: uppercase;
+
+            &.active {
+                a {
+                    color: $menubar_left_active;
+                }
+            }
 
             a {
                 color: #a2a2a2;
