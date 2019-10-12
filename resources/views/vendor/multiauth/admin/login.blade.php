@@ -1,9 +1,11 @@
 @extends('multiauth::layouts.app')
 @section('app-content')
-<div class="container-fluid overall-container text-center">
+<div class="container-fluid overall-container text-center auth-containers">
     <div class="row d-table-cell justify-content-center">
         <div class="col-md-5 column">
-            <h1>{{env('APP_NAME')}}</h1>
+            <div class="mb-3">
+                <h1>{{env('APP_NAME')}}</h1>
+            </div>
             <div class="card">
                 <div class="card-body text-left">
                     <div class="row">

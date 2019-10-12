@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get("/test", function () {
+//     return view('multiauth::admin.passwords.change');
+//     // return view('multiauth::admin.passwords.email');
+//     // $token = "ksjdflksjdflksf";
+//     // $email = "umoke10@hotmail.com";
+//     // return view('multiauth::admin.passwords.reset')->with(['token' => $token, 'email' => $email]);
+// });

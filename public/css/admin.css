@@ -10803,3 +10803,11 @@ body {
   width: 365px;
 }
 
+.auth-containers {
+  background-color: #fff;
+}
+
+.auth-containers h1 {
+  font-size: 24px;
+}
+
