@@ -133,6 +133,7 @@
   <component name="ProjectId" id="1SBieovlgSagQn9Oizhz23aWUk4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/Admin/Resources/views/auth" />
     <property name="nodejs_package_manager_path" value="npm" />
