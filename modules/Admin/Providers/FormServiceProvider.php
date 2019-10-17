@@ -2,10 +2,23 @@
 
 namespace Modules\Admin\Providers;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 class FormServiceProvider extends ServiceProvider
 {
+
+    /**
+     * Boot the application events.
+     *
+     * @param Router $router
+     * @return void
+     */
+    public function boot()
+    {
+        Form::component('bsText', 'components.form.text', ['name', 'value', 'attributes']);
+    }
+
     /**
      * Register the service provider.
      *
