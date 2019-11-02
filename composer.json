@@ -11,6 +11,7 @@
         "php": "^7.2",
         "barryvdh/laravel-dompdf": "^0.8.5",
         "devmarketer/easynav": "^1.0",
+        "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "flynsarmy/db-blade-compiler": "^5.5",
         "intervention/image": "^2.5",
@@ -18,10 +19,10 @@
         "laravel/framework": "^6.2",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
+        "laravelcollective/html": "^6.0",
         "maatwebsite/excel": "^3.1",
         "nwidart/laravel-modules": "^6.0",
-        "yabacon/paystack-php": "^2.1",
-        "laravelcollective/html": "^6.0"
+        "yabacon/paystack-php": "^2.1"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
