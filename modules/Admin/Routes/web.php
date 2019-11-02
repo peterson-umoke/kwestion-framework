@@ -36,6 +36,13 @@ Route::get('email/verify', 'VerificationController@show')->name('verification.no
 Route::get('email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify');
 Route::post('email/resend', 'VerificationController@resend')->name('verification.resend');
 
-// Route::get("test", function () {
-//     echo ;
-// });
+// users controllers
+Route::resource("users", "UserController")->except([
+    'show'
+]);
+Route::resource("users.roles", "UserRoleController")->except([
+    'show'
+]);
+Route::resource("roles", "AdminRoleController")->except([
+    'show'
+]);

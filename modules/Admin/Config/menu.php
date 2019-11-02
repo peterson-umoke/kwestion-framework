@@ -23,15 +23,15 @@ return [
                 'children' => [
                     [
                         'title' => 'All Users',
-                        'route' => 'users.index'
+                        'route' => 'admin.users.index'
                     ],
                     [
                         'title' => 'Add User',
-                        'route' => 'users.create'
+                        'route' => 'admin.users.create'
                     ],
                     [
                         'title' => 'User Roles',
-                        'route' => 'users.roles.index'
+                        'route' => 'admin.users.roles.index'
                     ],
                 ],
             ],

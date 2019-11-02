@@ -1,0 +1,75 @@
+<?php
+
+namespace Modules\Admin\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
+use Modules\Admin\Models\User;
+
+class UserController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware("admin.authenticate:admin");
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    public function index()
+    {
+        return view('admin::index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     * @return Response
+     */
+    public function create()
+    {
+        return view('admin::create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $user
+     * @return Response
+     */
+    public function edit(User $user)
+    {
+        return view('admin::edit');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * @param Request $request
+     * @param int $user
+     * @return Response
+     */
+    public function update(Request $request, User $user)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * @param int $user
+     * @return Response
+     */
+    public function destroy(User $user)
+    {
+        //
+    }
+}
