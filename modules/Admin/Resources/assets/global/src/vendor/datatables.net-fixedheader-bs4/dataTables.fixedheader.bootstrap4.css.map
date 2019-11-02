@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,wEAAyE;EACvE,UAAU,EAAE,YAAY;EACxB,aAAa,EAAE,YAAY;EAC3B,gBAAgB,EAAE,KAAK;;AAGzB,oCAAqC;EACnC,QAAQ,EAAE,gBAAgB;;AAG5B,kCAAmC;EACjC,QAAQ,EAAE,mBAAmB;;AAG/B,YAAa;EACX,0BAA2B;IACzB,OAAO,EAAE,IAAI",
+"sources": ["dataTables.fixedheader.bootstrap4.scss"],
+"names": [],
+"file": "dataTables.fixedheader.bootstrap4.css"
+}

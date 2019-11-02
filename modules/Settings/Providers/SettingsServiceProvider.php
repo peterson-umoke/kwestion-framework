@@ -29,6 +29,9 @@ class SettingsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/menu.php', 'menu.admin.sidebar.settings'
+        );
     }
 
     /**

@@ -1,0 +1,15 @@
+.breadcrumb {
+  list-style: none; }
+  .breadcrumb > li {
+    display: inline-block; }
+  .breadcrumb .is-hidden {
+    display: none; }
+  .breadcrumb-ellipsis {
+    display: inline-block; }
+  .breadcrumb-dropdown {
+    display: inline-block; }
+
+.breadcrumb > li.breadcrumb-ellipsis.is-hidden + li:before {
+  display: none; }
+
+/*# sourceMappingURL=asBreadcrumbs.css.map */

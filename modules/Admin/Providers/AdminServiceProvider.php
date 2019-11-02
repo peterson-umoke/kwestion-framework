@@ -6,6 +6,7 @@ use Config;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Modules\Admin\Http\Middleware\AuthenticateIfAdmin;
 use Modules\Admin\Http\Middleware\RedirectIfAdmin;
 use Modules\Admin\Http\Middleware\RedirectIfNotAdmin;
 
@@ -21,6 +22,7 @@ class AdminServiceProvider extends ServiceProvider
     {
         $router->aliasMiddleware('admin.auth', RedirectIfNotAdmin::class);
         $router->aliasMiddleware('admin.guest', RedirectIfAdmin::class);
+        $router->aliasMiddleware('admin.authenticate', AuthenticateIfAdmin::class);
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
@@ -36,6 +38,10 @@ class AdminServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->mergeConfigFrom(__DIR__ . "/../Config/menu.php", "menu");
+        $this->mergeConfigFrom(__DIR__ . "/../Config/auth_guards.php", "auth.guards");
+        $this->mergeConfigFrom(__DIR__ . "/../Config/auth_providers.php", "auth.providers");
+        $this->mergeConfigFrom(__DIR__ . "/../Config/auth_passwords.php", "auth.passwords");
     }
 
     /**
@@ -51,9 +57,6 @@ class AdminServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/../Config/config.php', 'admin'
         );
-        $this->mergeConfigFrom(__DIR__ . "/../Config/auth_guards.php", "auth.guards");
-        $this->mergeConfigFrom(__DIR__ . "/../Config/auth_providers.php", "auth.providers");
-        $this->mergeConfigFrom(__DIR__ . "/../Config/auth_passwords.php", "auth.passwords");
     }
 
     /**

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,kBAGC;EAFC,EAAG;IAAC,OAAO,EAAE,CAAC;EACd,IAAK;IAAC,OAAO,EAAE,CAAC;AAGlB,QAAS;EACP,cAAc,EAAE,OAAO;;AAGzB,mBAGC;EAFC,EAAG;IAAC,OAAO,EAAE,CAAC;EACd,IAAK;IAAC,OAAO,EAAE,CAAC;AAGlB,SAAU;EACR,cAAc,EAAE,QAAQ",
+"sources": ["fade.scss"],
+"names": [],
+"file": "fade.css"
+}

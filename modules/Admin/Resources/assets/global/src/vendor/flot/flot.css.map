@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,uHAAwH;EACtH,MAAM,EAAE,KAAK;;AAGf,uBAAwB;EACtB,MAAM,EAAE,KAAK;;AAGf,aAAc;EACZ,cAAc,EAAE,GAAG",
+"sources": ["flot.scss"],
+"names": [],
+"file": "flot.css"
+}

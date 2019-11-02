@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call([
-            \Modules\Admin\Database\Seeders\AdminDatabaseSeeder::class
+            \Modules\Admin\Database\Seeders\AdminDatabaseSeeder::class,
+            UserTableSeeder::class
         ]);
+//        $user = new UserFactory::create;
     }
 }

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAQ;EACN,YAAY,EAAE,CAAC;;AAEjB,kBAAmB;EACjB,YAAY,EAAE,IAAI",
+"sources": ["bar.scss"],
+"names": [],
+"file": "bar.css"
+}

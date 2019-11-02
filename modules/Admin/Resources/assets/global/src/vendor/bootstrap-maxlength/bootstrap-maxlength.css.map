@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,0BAAQ;EACN,UAAU,EAAE,GAAG",
+"sources": ["bootstrap-maxlength.scss"],
+"names": [],
+"file": "bootstrap-maxlength.css"
+}

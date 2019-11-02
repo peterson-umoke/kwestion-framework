@@ -30,6 +30,10 @@ class ResetPasswordController extends Controller
      */
     protected $redirectTo = '/admin';
 
+    public function __construct() {
+        $this->middleware('admin.guest:admin');
+    }
+
     /**
      * Get the post register / login redirect path.
      *

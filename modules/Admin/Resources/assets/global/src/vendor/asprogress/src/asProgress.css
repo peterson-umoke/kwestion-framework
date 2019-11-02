@@ -1,0 +1,34 @@
+.progress {
+  height: 20px;
+  padding: 1px;
+  background-color: #f7f7f7;
+  border: 1px solid #eeeeee;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  .progress__bar {
+    display: block;
+    height: 100%;
+    background: #5bc0de; }
+  .progress__label {
+    float: right;
+    padding: 0 2px;
+    color: #fff;
+    font-size: 12px; }
+  .progress--radius {
+    border-radius: 2px; }
+  .progress--round {
+    border-radius: 1000px; }
+  .progress--radius .progress__bar, .progress--round .progress__bar {
+    border-radius: inherit; }
+  .progress--small {
+    height: 15px; }
+  .progress--large {
+    height: 10px; }
+  .progress--success .progress__bar {
+    background-color: #43ac6a; }
+  .progress--alert .progress__bar {
+    background-color: #f04124; }
+  .progress--striped .progress__bar {
+    background-size: 40px 40px; }
+
+/*# sourceMappingURL=asProgress.css.map */

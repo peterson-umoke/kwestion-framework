@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/pilotframework.iml" filepath="$PROJECT_DIR$/.idea/pilotframework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../wordpress/.idea/wordpress.iml" filepath="$PROJECT_DIR$/../wordpress/.idea/wordpress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../remark/.idea/remark.iml" filepath="$PROJECT_DIR$/../remark/.idea/remark.iml" />
     </modules>
   </component>
 </project>

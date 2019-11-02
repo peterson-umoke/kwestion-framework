@@ -1,0 +1,33 @@
+.pie_progress {
+  position: relative;
+  text-align: center;
+  transform-style: preserve-3d; }
+  .pie_progress__svg {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    vertical-align: middle; }
+    .pie_progress__svg svg {
+      position: absolute;
+      margin: 0 auto;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: inline-block; }
+  .pie_progress__content, .pie_progress__number, .pie_progress__label, .pie_progress__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%); }
+
+.pie_progress__number {
+  font-size: 42px; }
+.pie_progress__label {
+  margin-top: 32px;
+  font-size: 12px; }
+
+/*# sourceMappingURL=asPieProgress.css.map */

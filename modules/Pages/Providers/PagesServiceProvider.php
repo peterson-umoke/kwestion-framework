@@ -29,6 +29,7 @@ class PagesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->mergeConfigFrom(__DIR__ . "/../Config/menu.php", "menu.admin.sidebar.pages");
     }
 
     /**
@@ -39,11 +40,12 @@ class PagesServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('pages.php'),
+            __DIR__ . '/../Config/config.php' => config_path('pages.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'pages'
+            __DIR__ . '/../Config/config.php', 'pages'
         );
+
     }
 
     /**
@@ -55,11 +57,11 @@ class PagesServiceProvider extends ServiceProvider
     {
         $viewPath = resource_path('views/modules/pages');
 
-        $sourcePath = __DIR__.'/../Resources/views';
+        $sourcePath = __DIR__ . '/../Resources/views';
 
         $this->publishes([
             $sourcePath => $viewPath
-        ],'views');
+        ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/pages';
@@ -78,7 +80,7 @@ class PagesServiceProvider extends ServiceProvider
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'pages');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'pages');
+            $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'pages');
         }
     }
 
@@ -89,7 +91,7 @@ class PagesServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production') && $this->app->runningInConsole()) {
+        if (!app()->environment('production') && $this->app->runningInConsole()) {
             app(Factory::class)->load(__DIR__ . '/../Database/factories');
         }
     }

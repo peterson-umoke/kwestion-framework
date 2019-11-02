@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAQ;EACN,OAAO,EAAE,gBAAgB;;AAG3B,kCAAmC;EACjC,WAAW,EAAE,MAAM;;AAGrB,uBAAwB;EACtB,OAAO,EAAE,CAAC;;AAGZ,iCAAkC;EAChC,UAAU,EAAE,+EAA+E;;AAG7F,uCAAwC;EACtC,OAAO,EAAE,CAAC;;AAGZ,8DAA+D;EAC7D,OAAO,EAAE,IAAI;;AAGf,qBAAsB;EACpB,gBAAgB,EAAE,KAAK",
+"sources": ["dataTables.scroller.bootstrap4.scss"],
+"names": [],
+"file": "dataTables.scroller.bootstrap4.css"
+}

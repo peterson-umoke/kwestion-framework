@@ -6,4 +6,5 @@
     <p>
         This view is loaded from module: {!! config('admin.name') !!}
     </p>
+    <a href="{{route("admin.logout")}}">Logout</a>
 @endsection

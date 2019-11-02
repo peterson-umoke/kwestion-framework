@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,6BAA8B;EAC5B,SAAS,EAAE,MAAM",
+"sources": ["jquery-tabledit.scss"],
+"names": [],
+"file": "jquery-tabledit.css"
+}

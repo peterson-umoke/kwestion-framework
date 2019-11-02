@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gCAAiC;EAC/B,QAAQ,EAAE,mBAAmB;EAC7B,OAAO,EAAE,GAAG;EACZ,gBAAgB,EAAE,wBAAuB;;AAG3C,gBAAiB;EACf,OAAO,EAAE,GAAG;EACZ,KAAK,EAAE,GAAG;EACV,gBAAgB,EAAE,OAAO",
+"sources": ["dataTables.colReorder.bootstrap4.scss"],
+"names": [],
+"file": "dataTables.colReorder.bootstrap4.css"
+}
