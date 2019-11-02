@@ -12,14 +12,13 @@
             "providers": [
                 "Modules\\Admin\\Providers\\AdminServiceProvider"
             ],
-            "aliases": {
-                
-            }
+            "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
             "Modules\\Admin\\": ""
-        }
+        },
+        "files": []
     }
 }

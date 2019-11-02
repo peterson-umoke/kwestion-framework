@@ -15,10 +15,10 @@ Route::get('/', 'AdminController@index')->name("dashboard");
 Route::get('/', 'AdminController@index')->name("home");
 
 // authenticatiion routes
-Route::get("login","LoginController@showLoginForm")->name("login.form");
-Route::post("login","LoginController@login")->name("login");
-Route::post("logout","LoginController@logout")->name("logout");
-Route::get("logout","LoginController@logout")->name("logout.simple");
+Route::get("login", "LoginController@showLoginForm")->name("login.form");
+Route::post("login", "LoginController@login")->name("login");
+Route::post("logout", "LoginController@logout")->name("logout");
+Route::get("logout", "LoginController@logout")->name("logout.simple");
 
 //password reset #1
 Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -35,3 +35,7 @@ Route::post('password/confirm', 'ConfirmPasswordController@confirm');
 Route::get('email/verify', 'VerificationController@show')->name('verification.notice');
 Route::get('email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify');
 Route::post('email/resend', 'VerificationController@resend')->name('verification.resend');
+
+// Route::get("test", function () {
+//     echo ;
+// });

@@ -3,7 +3,7 @@
 return [
     'title' => 'Pages',
     'route' => 'pages.index',
-    'icon' => 'fas fa-page',
+    'icon' => 'wb-grid-4',
     'children' => [
         [
             'title' => 'All Pages',

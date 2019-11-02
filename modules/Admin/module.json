@@ -4,10 +4,8 @@
     "description": "",
     "keywords": [],
     "order": 0,
-    "providers": [
-        "Modules\\Admin\\Providers\\AdminServiceProvider"
-    ],
+    "providers": ["Modules\\Admin\\Providers\\AdminServiceProvider"],
     "aliases": {},
-    "files": [],
+    "files": ["Helpers.php"],
     "requires": []
 }

@@ -14,12 +14,12 @@ return [
                 'category' => 'General',
                 'title' => 'Dashboard',
                 'route' => 'admin.home',
-                'icon' => 'fas fa-user',
+                'icon' => 'wb-dashboard',
             ],
             [
                 'title' => 'Users',
                 'route' => 'users.index',
-                'icon' => 'fas fa-user',
+                'icon' => 'wb-grid-4',
                 'children' => [
                     [
                         'title' => 'All Users',
@@ -38,7 +38,7 @@ return [
             [
                 'title' => 'Admins',
                 'route' => 'admins.index',
-                'icon' => 'fas fa-user',
+                'icon' => 'wb-grid-4',
                 'children' => [
                     [
                         'title' => 'All Admins',

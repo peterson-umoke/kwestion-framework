@@ -3,7 +3,7 @@
 return [
     'title' => 'Settings',
     'route' => 'pages.index',
-    'icon' => 'fas fa-page',
+    'icon' => 'wb-grid-4',
     'children' => [
         [
             'title' => 'General',
