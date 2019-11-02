@@ -5,8 +5,8 @@ return [
         'user_profile' => [
             [
                 'title' => 'Profile',
-                // 'route' => ["admin.admins.edit", \Illuminate\Support\Facades\Auth::user() ?? ''],
-                'route' => ["admin.admins.edit", ["admins" => 1]],
+                // 'route' => ["admin.admin-acl.edit", ["admin-acl" => Modules\Admin\Models\Admin::find(1)]],
+                'route' => ["admin.admin-acl.edit", ["admin-acl" => 1]],
                 'icon' => 'fas fa-user',
             ],
         ],

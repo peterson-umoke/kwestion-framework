@@ -14,11 +14,13 @@ if (!function_exists('getCurrentChildRoute')) :
     }
 endif;
 
-if (!function_exists('generate_route')) {
-    function generate_route($route)
+if (!function_exists('get_route')) {
+    function get_route($route)
     {
         if (is_array($route)) {
-            return route($route[0], $route[1]);
+            return call_user_func_array('route', $route);
+        } else {
+            return route($route);
         }
     }
 }

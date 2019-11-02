@@ -43,7 +43,7 @@ Route::group(['middleware' => ['admin.authenticate:admin']],  function () {
         ->except([
             'show'
         ]);
-    Route::resource("admins", "AdminController")
+    Route::resource("admin-acl", "AdminController")
         ->except([
             'show'
         ]);

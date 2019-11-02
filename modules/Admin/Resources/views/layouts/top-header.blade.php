@@ -76,15 +76,9 @@
                     </a>
                     <div class="dropdown-menu" role="menu" style="min-width: 250px;">
                         @foreach(config('menu.admin.user_profile') as $menu)
-
-                        <a class="dropdown-item" href="{{route($menu['route'])}}" role="menuitem"><i
+                        <a class="dropdown-item" href="{{get_route($menu['route'])}}" role="menuitem"><i
                                 class="{{$menu['icon']}}" aria-hidden="true"></i>
                             {{$menu['title']}}</a>
-
-                        {{-- <a class="dropdown-item"
-                            href="{{Route::has($menu['route']) ?  route($menu['route']) : url($menu['url'] ?? "#")}}"
-                        role="menuitem"><i class="{{$menu['icon']}}" aria-hidden="true"></i>
-                        {{$menu['title']}}</a> --}}
                         @endforeach
                         <div class="dropdown-divider" role="presentation"></div>
                         <a class="dropdown-item" href="{{route("admin.logout.simple")}}" role="menuitem"><i
