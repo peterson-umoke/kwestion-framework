@@ -5,7 +5,8 @@ return [
         'user_profile' => [
             [
                 'title' => 'Profile',
-                'route' => ["admin.edit", \Illuminate\Support\Facades\Auth::user() ?? ''],
+                // 'route' => ["admin.admins.edit", \Illuminate\Support\Facades\Auth::user() ?? ''],
+                'route' => ["admin.admins.edit", ["admins" => 1]],
                 'icon' => 'fas fa-user',
             ],
         ],
@@ -18,7 +19,6 @@ return [
             ],
             [
                 'title' => 'Users',
-                'route' => 'users.index',
                 'icon' => 'wb-grid-4',
                 'children' => [
                     [
@@ -31,26 +31,25 @@ return [
                     ],
                     [
                         'title' => 'User Roles',
-                        'route' => 'admin.users.roles.index'
+                        'route' => 'admin.user-roles.index'
                     ],
                 ],
             ],
             [
                 'title' => 'Admins',
-                'route' => 'admins.index',
                 'icon' => 'wb-grid-4',
                 'children' => [
                     [
                         'title' => 'All Admins',
-                        'route' => 'admins.index'
+                        'route' => 'admin.admins.index'
                     ],
                     [
                         'title' => 'Add Admin',
-                        'route' => 'admins.create'
+                        'route' => 'admin.admins.create'
                     ],
                     [
                         'title' => 'Admin Roles',
-                        'route' => 'admins.roles.index'
+                        'route' => 'admin.roles.index'
                     ],
                 ],
             ],

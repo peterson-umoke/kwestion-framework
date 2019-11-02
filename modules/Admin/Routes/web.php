@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', 'AdminController@index')->name("dashboard");
-Route::get('/', 'AdminController@index')->name("home");
-
 // authenticatiion routes
 Route::get("login", "LoginController@showLoginForm")->name("login.form");
 Route::post("login", "LoginController@login")->name("login");
@@ -36,13 +33,26 @@ Route::get('email/verify', 'VerificationController@show')->name('verification.no
 Route::get('email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify');
 Route::post('email/resend', 'VerificationController@resend')->name('verification.resend');
 
-// users controllers
-Route::resource("users", "UserController")->except([
-    'show'
-]);
-Route::resource("users.roles", "UserRoleController")->except([
-    'show'
-]);
-Route::resource("roles", "AdminRoleController")->except([
-    'show'
-]);
+Route::group(['middleware' => ['admin.authenticate:admin']],  function () {
+    // default routes
+    Route::get('/', 'DashboardController@index')->name("dashboard");
+    Route::get('/', 'DashboardController@index')->name("home");
+
+    // users controllers
+    Route::resource("users", "UserController")
+        ->except([
+            'show'
+        ]);
+    Route::resource("admins", "AdminController")
+        ->except([
+            'show'
+        ]);
+    Route::resource("user-roles", "UserRoleController")
+        ->except([
+            'show'
+        ]);
+    Route::resource("roles", "AdminRoleController")
+        ->except([
+            'show'
+        ]);
+});
