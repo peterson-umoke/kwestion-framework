@@ -6,7 +6,7 @@ return [
             [
                 'title' => 'Profile',
                 // 'route' => ["admin.admin-acl.edit", ["admin-acl" => Modules\Admin\Models\Admin::find(1)]],
-                'route' => ["admin.admin-acl.edit", ["admin-acl" => 1]],
+                'route' => ["admin.admin-acl.edit", ["admin_acl" => 1]],
                 'icon' => 'fas fa-user',
             ],
         ],
@@ -41,11 +41,11 @@ return [
                 'children' => [
                     [
                         'title' => 'All Admins',
-                        'route' => 'admin.admins.index'
+                        'route' => 'admin.admin-acl.index'
                     ],
                     [
                         'title' => 'Add Admin',
-                        'route' => 'admin.admins.create'
+                        'route' => 'admin.admin-acl.create'
                     ],
                     [
                         'title' => 'Admin Roles',
