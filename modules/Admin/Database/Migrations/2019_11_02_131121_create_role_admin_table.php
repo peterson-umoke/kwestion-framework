@@ -17,7 +17,6 @@ class CreateRoleAdminTable extends Migration
             $table->bigIncrements('id');
             $table->string("admin_id");
             $table->string("role_id");
-            $table->timestamps();
         });
     }
 
