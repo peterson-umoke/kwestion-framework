@@ -5,6 +5,7 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Models\Role;
 
 class UserRoleController extends Controller
 {
@@ -14,7 +15,7 @@ class UserRoleController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+        return view('admin::roles.users.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class UserRoleController extends Controller
      */
     public function create()
     {
-        return view('admin::create');
+        return view('admin::roles.users.edit');
     }
 
     /**
@@ -37,23 +38,13 @@ class UserRoleController extends Controller
     }
 
     /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        return view('admin::show');
-    }
-
-    /**
      * Show the form for editing the specified resource.
-     * @param int $id
+     * @param Role $role
      * @return Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        return view('admin::edit');
+        return view('admin::roles.users.edit', compact('role'));
     }
 
     /**
