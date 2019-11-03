@@ -16,12 +16,6 @@ class UserTableSeeder extends Seeder
 //           $faker::
 //        });
 
-        $user = new \App\User();
-        $user->first_name = "Jegede";
-        $user->last_name = "umoke";
-        $user->email = "user@user.com";
-        $user->password = bcrypt('password');
-        $user->email_verified_at = now();
-        $user->save();
+
     }
 }
