@@ -2,8 +2,8 @@
 
 namespace Modules\CustomCollectives\Providers;
 
+use Form;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Eloquent\Factory;
 
 class CustomCollectivesServiceProvider extends ServiceProvider
 {
@@ -14,27 +14,9 @@ class CustomCollectivesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
-        $this->registerFactories();
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
-    }
-
-    /**
-     * Register translations.
-     *
-     * @return void
-     */
-    public function registerTranslations()
-    {
-        $langPath = resource_path('lang/modules/customcollectives');
-
-        if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'customcollectives');
-        } else {
-            $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'customcollectives');
-        }
+        Form::component('bsText', 'customcollectives::components.bsText', ['name', 'value' => null, 'attributes']);
     }
 
     /**
@@ -73,34 +55,12 @@ class CustomCollectivesServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register an additional directory of factories.
-     *
-     * @return void
-     */
-    public function registerFactories()
-    {
-        if (!app()->environment('production') && $this->app->runningInConsole()) {
-            app(Factory::class)->load(__DIR__ . '/../Database/factories');
-        }
-    }
-
-    /**
      * Register the service provider.
      *
      * @return void
      */
     public function register()
     {
-        $this->app->register(RouteServiceProvider::class);
-    }
 
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return [];
     }
 }
