@@ -5,6 +5,7 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Models\Admin;
 
 class AdminController extends Controller
 {
@@ -15,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+        return view('admin::admins.index');
     }
 
     /**
@@ -24,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin::create');
+        return view('admin::admins.edit');
     }
 
     /**
@@ -38,23 +39,13 @@ class AdminController extends Controller
     }
 
     /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        return view('admin::show');
-    }
-
-    /**
      * Show the form for editing the specified resource.
-     * @param int $id
+     * @param Admin $admin
      * @return Response
      */
-    public function edit($id)
+    public function edit(Admin $admin)
     {
-        return view('admin::edit');
+        return view('admin::admins.edit', compact('admin'));
     }
 
     /**
