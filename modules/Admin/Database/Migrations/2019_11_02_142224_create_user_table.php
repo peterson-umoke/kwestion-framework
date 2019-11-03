@@ -14,17 +14,9 @@ class CreateUserTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('username')->nullable();
+            $table->string('username', 200)
+                ->nullable()
+                ->after('email');
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        // Schema::dropIfExists('user');
     }
 }
