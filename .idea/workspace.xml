@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d965e97a-8c8b-4804-b603-b7995d099e83" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pilotframework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pilotframework.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/dashboard/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Config/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Config/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Admin/Database/Migrations/2019_11_02_141604_create_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Database/Migrations/2019_11_02_141604_create_role_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Admin/Database/Seeders/AdminDatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Database/Seeders/AdminDatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/Admin/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Models/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Models/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Admin/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/top-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/top-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,6 +189,11 @@
       <recent name="$PROJECT_DIR$/../wordpress/wp-content/plugins/events-booking/public/partials" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="php artisan migrate:fresh --seed" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -261,6 +264,7 @@
       <workItem from="1572603756252" duration="552000" />
       <workItem from="1572645515144" duration="3169000" />
       <workItem from="1572721366216" duration="4210000" />
+      <workItem from="1572777072844" duration="5703000" />
     </task>
     <task id="LOCAL-00001" summary="Updated the gitignore and composer.json file for the latest changes in the application itself">
       <created>1571309544042</created>
@@ -290,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571309655725</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated the routes and page layouts">
+      <created>1572777206600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572777206600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +328,8 @@
     <MESSAGE value="Added a new form service provider to be able to customize the form input fields i need" />
     <MESSAGE value="workspace intelligence and caching" />
     <MESSAGE value="updated the gitignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the gitignore file" />
+    <MESSAGE value="Updated the routes and page layouts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the routes and page layouts" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

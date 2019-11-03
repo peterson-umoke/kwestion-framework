@@ -33,6 +33,9 @@
           href="{{url('/modules/Admin/')}}/Resources/assets/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
+
+    @stack("css")
+
     <!--[if lt IE 9]>
     <script src="{{url('/modules/Admin/')}}/Resources/assets/global/vendor/html5shiv/html5shiv.min.js"></script>
     <![endif]-->
@@ -47,6 +50,8 @@
     <script>
         Breakpoints();
     </script>
+    @stack("top_js")
+    @stack("topjs")
 </head>
 <body class="animsition">
 <!--[if lt IE 8]>
@@ -111,7 +116,8 @@
 <script src="{{url('/modules/Admin/')}}/Resources/assets/global/js/Plugin/asscrollable.js"></script>
 <script src="{{url('/modules/Admin/')}}/Resources/assets/global/js/Plugin/slidepanel.js"></script>
 <script src="{{url('/modules/Admin/')}}/Resources/assets/global/js/Plugin/switchery.js"></script>
-
+@stack("bottomjs");
+@stack("bottom_js");
 <script>
     (function (document, window, $) {
         'use strict';

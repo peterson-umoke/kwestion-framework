@@ -25,3 +25,17 @@ if (!function_exists('get_route')) {
         }
     }
 }
+
+if (!function_exists('get_current_user_role')):
+    function get_current_user_role()
+    {
+        return auth()->user()->roles()->first();
+    }
+endif;
+//
+//
+//if(!function_exists('have_role')) {
+//    function have_roles($role = array()) {
+//        $data = auth()->user-
+//    }
+//}
