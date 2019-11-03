@@ -1,0 +1,24 @@
+{
+    "name": "nwidart/customcollectives",
+    "description": "",
+    "authors": [
+        {
+            "name": "Peterson Umoke",
+            "email": "umoke10@hotmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\CustomCollectives\\Providers\\CustomCollectivesServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\CustomCollectives\\": ""
+        }
+    }
+}

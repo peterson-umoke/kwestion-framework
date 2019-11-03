@@ -1,0 +1,13 @@
+{
+    "name": "CustomCollectives",
+    "alias": "customcollectives",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\CustomCollectives\\Providers\\CustomCollectivesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
