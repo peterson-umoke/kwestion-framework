@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d965e97a-8c8b-4804-b603-b7995d099e83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/dashboard/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Database/Migrations/2019_11_02_141604_create_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Database/Migrations/2019_11_02_141604_create_role_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Database/Seeders/AdminDatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Database/Seeders/AdminDatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/top-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Resources/views/layouts/top-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Admin/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Admin/Http/Controllers/UserRoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Admin/Http/Controllers/UserRoleController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +38,11 @@
     <select />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Peterson Umoke &lt;umoke10@hotmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -167,6 +166,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -175,18 +175,21 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/Admin/Resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/Admin/Resources/views/roles" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/Admin/Resources/views/admins" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/Admin/Resources/views/roles" />
       <recent name="$PROJECT_DIR$/modules/Admin/Resources/views/layouts" />
       <recent name="$PROJECT_DIR$/modules/Admin/Resources/assets" />
       <recent name="$PROJECT_DIR$/modules/Admin/Resources" />
       <recent name="$PROJECT_DIR$/../wordpress/wp-content/plugins/events-booking/public" />
-      <recent name="$PROJECT_DIR$/../wordpress/wp-content/plugins/events-booking/public/partials" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -264,7 +267,8 @@
       <workItem from="1572603756252" duration="552000" />
       <workItem from="1572645515144" duration="3169000" />
       <workItem from="1572721366216" duration="4210000" />
-      <workItem from="1572777072844" duration="5703000" />
+      <workItem from="1572777072844" duration="7335000" />
+      <workItem from="1572807270417" duration="1495000" />
     </task>
     <task id="LOCAL-00001" summary="Updated the gitignore and composer.json file for the latest changes in the application itself">
       <created>1571309544042</created>
@@ -301,11 +305,91 @@
       <option name="project" value="LOCAL" />
       <updated>1572777206600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated the database seeds and other things to accomodate user creation from the admin module">
+      <created>1572796752788</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572796752788</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added helpers and dynamic role previewing of logged in user">
+      <created>1572796798712</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572796798712</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated the database architecture, removed timestamps">
+      <created>1572808255020</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808255021</updated>
+    </task>
+    <task id="LOCAL-00009" summary="updated the database architecture, updated the column for username to be near email">
+      <created>1572808295623</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808295623</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated the database architecture, updated the columns and added type to differentiate between the two types of roles for the application">
+      <created>1572808530552</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808530552</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updated the views for the application">
+      <created>1572808583053</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808583053</updated>
+    </task>
+    <task id="LOCAL-00012" summary="nothing new yets">
+      <created>1572808609121</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808609121</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added view for the application">
+      <created>1572808627316</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808627316</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added view for the application">
+      <created>1572808648615</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808648615</updated>
+    </task>
+    <task id="LOCAL-00015" summary="updatd the fillables for the application">
+      <created>1572808665015</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808665015</updated>
+    </task>
+    <task id="LOCAL-00016" summary="updatd the fillables for the application">
+      <created>1572808765856</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808765856</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -324,12 +408,22 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="Updated the gitignore and composer.json file for the latest changes in the application itself" />
     <MESSAGE value="Added a new form service provider to be able to customize the form input fields i need" />
     <MESSAGE value="workspace intelligence and caching" />
     <MESSAGE value="updated the gitignore file" />
     <MESSAGE value="Updated the routes and page layouts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the routes and page layouts" />
+    <MESSAGE value="updated the database seeds and other things to accomodate user creation from the admin module" />
+    <MESSAGE value="added helpers and dynamic role previewing of logged in user" />
+    <MESSAGE value="updated the database architecture, removed timestamps" />
+    <MESSAGE value="updated the database architecture, updated the column for username to be near email" />
+    <MESSAGE value="updated the database architecture, updated the columns and added type to differentiate between the two types of roles for the application" />
+    <MESSAGE value="updated the views for the application" />
+    <MESSAGE value="nothing new yets" />
+    <MESSAGE value="added view for the application" />
+    <MESSAGE value="updatd the fillables for the application" />
+    <option name="LAST_COMMIT_MESSAGE" value="updatd the fillables for the application" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
