@@ -35,4 +35,12 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function roles()
+    {
+        return $this->belongsToMany('Modules\Admin\Models\Role', 'role_admin', 'admin_id', 'role_id');
+    }
 }

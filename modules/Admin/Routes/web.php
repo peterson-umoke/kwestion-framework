@@ -38,6 +38,11 @@ Route::group(['middleware' => ['admin.authenticate:admin']],  function () {
     Route::get('/', 'DashboardController@index')->name("dashboard");
     Route::get('/', 'DashboardController@index')->name("home");
 
+    Route::get("your-profile", function () {
+        $userID = auth::user();
+        return redirect()->route("admin.admin-acl.edit", ['admin_acl' => $userID]);
+    })->name("your-profile");
+
     // users controllers
     Route::resource("users", "UserController")
         ->except([

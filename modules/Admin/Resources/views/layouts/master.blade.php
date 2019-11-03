@@ -66,7 +66,8 @@
 
 <!-- Footer -->
 <footer class="site-footer">
-    <div class="site-footer-legal">© {{date("Y")}} <a href="http://github.com/peter.umoke/kwestion-framework">Kwestion Framework</a></div>
+    <div class="site-footer-legal">© {{date("Y")}} <a
+            href="http://github.com/peter.umoke/kwestion-framework">{{config('app.name')}}</a></div>
     <div class="site-footer-right">
         Crafted with <i class="red-600 wb wb-heart"></i> by <a href="https://fb.com/peter.umoke">Kwestion Technologies</a>
     </div>

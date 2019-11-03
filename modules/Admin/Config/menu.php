@@ -1,12 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 return [
     'admin' => [
         'user_profile' => [
             [
                 'title' => 'Profile',
-                // 'route' => ["admin.admin-acl.edit", ["admin-acl" => Modules\Admin\Models\Admin::find(1)]],
-                'route' => ["admin.admin-acl.edit", ["admin_acl" => 1]],
+                'route' => "admin.your-profile",
                 'icon' => 'fas fa-user',
             ],
         ],
