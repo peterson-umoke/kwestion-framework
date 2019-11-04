@@ -1,8 +1,7 @@
 @extends('admin::layouts.master')
-@section("title","All Admins")
+{{--@section("title","All Admins")--}}
 
 @section("content")
 
-    hello booboo
-
+    {{Form::radio('name', 'value',false,['class' => 'wire'])}}
 @endsection

@@ -7,7 +7,7 @@
     <meta name="description" content="@yield("meta_description")">
     <meta name="author" content="@yield("meta_author")">
 
-    <title>@yield("title","The Page") | {{config('app.name','PilotFramework')}}</title>
+    <title>@yield("title",dynamic_title() ?? "The Page") | {{config('app.name','PilotFramework')}}</title>
 
     <link rel="apple-touch-icon" href="{{url('/modules/Admin/')}}/Resources/assets/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="{{url('/modules/Admin/')}}/Resources/assets/images/favicon.ico">

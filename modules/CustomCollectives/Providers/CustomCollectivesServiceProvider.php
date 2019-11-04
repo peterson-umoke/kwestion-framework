@@ -16,7 +16,11 @@ class CustomCollectivesServiceProvider extends ServiceProvider
     {
         $this->registerConfig();
         $this->registerViews();
-        Form::component('bsText', 'customcollectives::components.bsText', ['name', 'value' => null, 'attributes']);
+        Form::component('bsTextbox', 'customcollectives::bsText', ['name', 'value' => null, 'type' => 'text', 'attributes' => []]);
+        Form::component('bsCheckbox', 'customcollectives::bsCheckbox', ['name', 'value' => null, 'attributes' => [], 'isInline' => false]);
+        Form::component('bsRadiobox', 'customcollectives::bsRadio', ['name', 'value' => null, 'attributes' => [], 'isInline' => false]);
+        Form::component('bsSelectbox', 'customcollectives::bsSelect', ['name', 'options' => [], 'value' => null, 'placeholder' => 'Choose ...', 'attributes' => []]);
+        Form::component('bsTextareabox', 'customcollectives::bsTextArea', ['name', 'value' => null, 'attributes' => []]);
     }
 
     /**
@@ -43,7 +47,7 @@ class CustomCollectivesServiceProvider extends ServiceProvider
     {
         $viewPath = resource_path('views/modules/customcollectives');
 
-        $sourcePath = __DIR__ . '/../Resources/views';
+        $sourcePath = __DIR__ . '/../views';
 
         $this->publishes([
             $sourcePath => $viewPath

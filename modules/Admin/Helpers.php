@@ -32,10 +32,26 @@ if (!function_exists('get_current_user_role')):
         return auth()->user()->roles()->first();
     }
 endif;
-//
-//
-//if(!function_exists('have_role')) {
-//    function have_roles($role = array()) {
-//        $data = auth()->user-
-//    }
-//}
+
+if (!function_exists('dynamic_title')):
+    /**
+     * used to generate dynamic titles from the configuration file for menus
+     * @return mixed
+     */
+    function dynamic_title()
+    {
+        foreach (config("menu.admin.sidebar") as $options) {
+            if (array_key_exists('children', $options) && is_array($options['children'])) {
+                foreach ($options['children'] as $key) {
+                    if (Nav::isRoute($key['route'])) {
+                        return $key['title'];
+                    }
+                }
+            } else {
+                if (Nav::isRoute($options['route'])) {
+                    return $options['title'];
+                }
+            }
+        }
+    }
+endif;
