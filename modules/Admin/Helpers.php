@@ -6,7 +6,7 @@ if (!function_exists('getCurrentChildRoute')) :
     {
         if (array_key_exists('children', $options) && is_array($options['children'])) {
             foreach ($options['children'] as $key) {
-                if (Nav::isRoute($key['route'])) {
+                if (Nav::isRoute($key['route']) || Nav::isResource($key['route'])) {
                     return $class;
                 }
             }
