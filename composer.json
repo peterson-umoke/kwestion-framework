@@ -10,7 +10,7 @@
     ],
     "require": {
         "catfan/medoo": "^1.5",
-        "verot/class.upload.php": "^0.33.0",
+        "verot/class.upload.php": "^2.0.9",
         "phpmailer/phpmailer": "^6.0",
         "yabacon/paystack-php": "^2.1"
     }
