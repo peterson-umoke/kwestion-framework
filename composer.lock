@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80af7279b88f65abf2a34eab8a3d30df",
+    "content-hash": "fc511d5ce6f47499175e034d0e8b3e34",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -129,20 +129,20 @@
         },
         {
             "name": "verot/class.upload.php",
-            "version": "0.33",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verot/class.upload.php.git",
-                "reference": "79125bcdcd17fda24ce7ff681f2066ae42097ec7"
+                "reference": "bec90d3c3a1e60f9bf066c0595c90a3dc9c143e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/79125bcdcd17fda24ce7ff681f2066ae42097ec7",
-                "reference": "79125bcdcd17fda24ce7ff681f2066ae42097ec7",
+                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/bec90d3c3a1e60f9bf066c0595c90a3dc9c143e0",
+                "reference": "bec90d3c3a1e60f9bf066c0595c90a3dc9c143e0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=4"
+                "php": ">=5.3"
             },
             "type": "library",
             "autoload": {
@@ -152,7 +152,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPLv2"
+                "GPL-2.0-only"
             ],
             "authors": [
                 {
@@ -166,7 +166,7 @@
                 "gd",
                 "upload"
             ],
-            "time": "2016-07-16T19:59:53+00:00"
+            "time": "2020-01-12T21:16:22+00:00"
         },
         {
             "name": "yabacon/paystack-php",
