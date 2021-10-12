@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "catfan/medoo",
-            "version": "v1.5.4",
+            "version": "v1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/catfan/Medoo.git",
-                "reference": "a6b7b05b18fa7c8f955e259d491344b1db9a51bf"
+                "reference": "3b28d9469fd3f6f6e9c1106ec4342111ab2b50c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/catfan/Medoo/zipball/a6b7b05b18fa7c8f955e259d491344b1db9a51bf",
-                "reference": "a6b7b05b18fa7c8f955e259d491344b1db9a51bf",
+                "url": "https://api.github.com/repos/catfan/Medoo/zipball/3b28d9469fd3f6f6e9c1106ec4342111ab2b50c4",
+                "reference": "3b28d9469fd3f6f6e9c1106ec4342111ab2b50c4",
                 "shasum": ""
             },
             "require": {
@@ -31,7 +31,7 @@
                 "ext-pdo_oci8": "For Oracle version 8 database",
                 "ext-pdo_pqsql": "For PostgreSQL database",
                 "ext-pdo_sqlite": "For SQLite database",
-                "ext-pdo_sqlsrv": "For MSSQL database"
+                "ext-pdo_sqlsrv": "For MSSQL database on both Window/Liunx platform"
             },
             "type": "framework",
             "autoload": {
@@ -49,10 +49,11 @@
                     "email": "angel@catfan.me"
                 }
             ],
-            "description": "The lightest PHP database framework to accelerate development",
+            "description": "The lightweight PHP database framework to accelerate development",
             "homepage": "https://medoo.in",
             "keywords": [
                 "database",
+                "database library",
                 "lightweight",
                 "mariadb",
                 "mssql",
@@ -63,7 +64,11 @@
                 "sql",
                 "sqlite"
             ],
-            "time": "2018-01-08T20:01:12+00:00"
+            "support": {
+                "issues": "https://github.com/catfan/Medoo/issues",
+                "source": "https://github.com/catfan/Medoo"
+            },
+            "time": "2019-10-12T13:13:11+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -245,5 +250,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
